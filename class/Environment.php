@@ -11,7 +11,7 @@
             private string $ssh_usename, 
             private string $phpmyadmin_link, 
             private int $ip_restriction, 
-            private int $project_id
+            private Project $project_id
         )
         {
         }
@@ -77,5 +77,14 @@
         public function setIpRestriction(int $ip_restriction): void
         {
             $this->ip_restriction = $ip_restriction;
+        }
+
+        public function getProjectId(): Project
+        {
+            return $this->project_id;
+        }
+        public function setProjectId(string $project_id): void
+        {
+            $this->project_id = $project_id;
         }
     }
