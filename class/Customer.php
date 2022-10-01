@@ -1,8 +1,8 @@
 <?php
     class Customer {
+        private int $id;
 
         public function __construct(
-            private int $id, 
             private string $code, 
             private string $name, 
             private string $notes
@@ -13,10 +13,6 @@
         public function getId(): int
         {
             return $this->id;
-        }
-        public function setId(int $id): int
-        {
-            $this->id = $id;
         }
 
         public function getCode(): string
