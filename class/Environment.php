@@ -1,9 +1,9 @@
 <?php
-    require_once(__DIR__ . '/Projet.php';
+    require_once(__DIR__.'/Projet.php');
     class Environment {
+        private int $id;
 
         public function __construct(
-            private int $id, 
             private string $name, 
             private string $link, 
             private string $ip_address, 
@@ -14,6 +14,11 @@
             private Project $project_id
         )
         {
+        }
+
+        public function getId(): int 
+        {
+            return this->id;
         }
 
         public function getName(): string
