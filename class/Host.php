@@ -1,12 +1,12 @@
 <?php
-
-require_once __DIR__."/Customer.php";
-require_once __DIR__."Contact.php";
+require_once(__DIR__ . '/Customer.php');
+require_once(__DIR__.'Contact.php');
 
 class Host
 {
+    private int $id;
+
     public function __construct(
-        private int $id,
         private string $code, 
         private string $name,
         private string $notes
