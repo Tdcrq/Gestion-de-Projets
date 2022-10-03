@@ -7,12 +7,12 @@ class Environment {
     public function __construct(
         private string $name, 
         private string $link, 
-        private string $ip_address, 
-        private int $ssh_port, 
-        private string $ssh_usename, 
-        private string $phpmyadmin_link, 
-        private int $ip_restriction, 
-        private Project $project_id
+        private string $ipAddress, 
+        private int $sshPort, 
+        private string $sshUsername, 
+        private string $phpMyAdminLink, 
+        private int $ipRestriction, 
+        private project $project
     )
     {
     }
@@ -42,55 +42,55 @@ class Environment {
 
     public function getIpAddress(): string
     {
-        return $this->ip_address;
+        return $this->ipAddress;
     }
-    public function setIpAddress(string $ip_address): void
+    public function setIpAddress(string $ipAddress): void
     {
-        $this->ip_address = $ip_address;
+        $this->ipAddress = $ipAddress;
     }
 
     public function getSshPort(): int
     {
-        return $this->ssh_port;
+        return $this->sshPort;
     }
-    public function setIpPort(int $ssh_port): void
+    public function setIpPort(int $sshPort): void
     {
-        $this->ssh_port = $ssh_port;
+        $this->sshPort = $sshPort;
     }
 
     public function getSshUsename(): string
     {
-        return $this->ssh_usename;
+        return $this->sshUsername;
     }
-    public function setSshUsename(string $ssh_usename): void
+    public function setSshUsename(string $sshUsername): void
     {
-        $this->ssh_usename = $ssh_usename;
+        $this->sshUsername = $sshUsername;
     }
 
     public function getphpmyadminLink(): string
     {
-        return $this->phpmyadmin_link;
+        return $this->phpMyAdminLink;
     }
-    public function setphpmyadminLink(string $phpmyadmin_link): void
+    public function setphpmyadminLink(string $phpMyAdminLink): void
     {
-        $this->phpmyadmin_link = $phpmyadmin_link;
+        $this->phpMyAdminLink = $phpMyAdminLink;
     }
 
     public function getIpRestriction(): int
     {
-        return $this->ip_restriction;
+        return $this->ipRestriction;
     }
-    public function setIpRestriction(int $ip_restriction): void
+    public function setIpRestriction(int $ipRestriction): void
     {
-        $this->ip_restriction = $ip_restriction;
+        $this->ipRestriction = $ipRestriction;
     }
 
-    public function getProjectId(): Project
+    public function getproject(): project
     {
-        return $this->project_id;
+        return $this->project;
     }
-    public function setProjectId(string $project_id): void
+    public function setproject(string $project): void
     {
-        $this->project_id = $project_id;
+        $this->project = $project;
     }
 }
