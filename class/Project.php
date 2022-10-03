@@ -10,12 +10,12 @@
         public function __construct(
             private string $name,
             private string $code,
-            private string $lastpass_folder,
-            private string $link_mock_ups,
-            private int $managed_server,
+            private string $lastPassFolder,
+            private string $linkMockUps,
+            private int $managedServer,
             private string $text,
-            private Host $host_id,
-            private Customer $customer_id
+            private Host $host,
+            private Customer $customer
         ){}
             
         public function getId(): int{
@@ -39,27 +39,27 @@
         }
 
         public function getLastPassFolder(): string{
-            return $this->lastpass_folder;
+            return $this->lastPassFolder;
         }
 
-        public function setLastPassFolder(string $lastpass_folder): void{
-            $this->lastpass_folder = $lastpass_folder;
+        public function setLastPassFolder(string $lastPassFolder): void{
+            $this->lastPassFolder = $lastPassFolder;
         }
 
         public function getLinkMockUps(): string{
-            return $this->link_mock_ups;
+            return $this->linkMockUps;
         }
 
-        public function setLinkMockUps(string $link_mock_ups): void{
-            $this->link_mock_ups = $link_mock_ups;
+        public function setLinkMockUps(string $linkMockUps): void{
+            $this->linkMockUps = $linkMockUps;
         }
 
         public function getManagedServer(): int{
-            return $this->managed_server;
+            return $this->managedServer;
         }
 
-        public function setManagedServer(int $managed_server): void{
-            $this->managed_server = $managed_server;
+        public function setManagedServer(int $managedServer): void{
+            $this->managedServer = $managedServer;
         }
 
         public function getText(): string{
@@ -79,7 +79,7 @@
         }
 
         public function getCustomer(): Customer{
-            return $this->host;
+            return $this->customer;
         }
 
         public function setCustomer(Customer $Customer): void{

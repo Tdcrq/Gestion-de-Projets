@@ -9,10 +9,10 @@ class Contact
 
     public function __construct(
         private string $email, 
-        private string $phone_number,
+        private string $phoneNumber,
         private string $role,
-        private Host $host_id,
-        private Customer $customer_id
+        private Host $host,
+        private Customer $customer
     )
     {
     }
@@ -39,12 +39,12 @@ class Contact
 
     public function getHostId(): Host 
     {
-        return $this->host_id;
+        return $this->host;
     }
 
     public function getCustomerId(): Customer 
     {
-        return $this->customer_id;
+        return $this->customer;
     }
 
     public function setId(int $id): void 
@@ -57,9 +57,9 @@ class Contact
         $this->email = $email;
     }
 
-    public function setPhoneNumber(string $phone_number): void 
+    public function setPhoneNumber(string $phoneNumber): void 
     {
-        $this->phone_number = $phone_Number;
+        $this->phoneNumber = $phoneNumber;
     }
 
     public function setRole(string $role): void 
@@ -67,13 +67,13 @@ class Contact
         $this->role = $role;
     }
 
-    public function setHostId(Host $host_id): void 
+    public function setHostId(Host $host): void 
     {
-        $this->host_id = $host_id;
+        $this->host = $host;
     }
 
-    public function setCustomerId(Customer $customer_id): Customer
+    public function setCustomerId(Customer $customer): void
     {
-        $this->customer_id = $customer_id;
+        $this->customer = $customer;
     }
 }
