@@ -1,5 +1,5 @@
 <?php
-require_once(__DIR__.'/Projet.php');
+require_once(__DIR__.'/Project.php');
 
 class Environment {
     private int $id;
