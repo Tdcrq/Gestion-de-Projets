@@ -46,17 +46,14 @@ main {
 
 .layout {
     font-weight: bold;
-    margin-left: 1.5em;
+    border-bottom: 1px solid var(--bg-color);
+    padding: 1em 0 1em 1.5em;
 }
 
 .layout i {
     margin-right: 3px;
 }
 
-.separator {
-    border-bottom: 1px solid var(--bg-color);
-    margin: 1em 0;
-}
 /* RIGHT-SECTION */
 
 /* FOOTER */

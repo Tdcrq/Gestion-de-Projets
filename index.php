@@ -25,28 +25,20 @@
                         TABLEAU DE BORD
                     </div>
 
-                    <div class="separator"></div>
-
                     <div class="layout">
                         <i class="fa-solid fa-circle-user"></i>
                         PROJETS
                     </div>
-
-                    <div class="separator"></div>
 
                     <div class="layout">
                         <i class="fa-solid fa-book"></i>
                         CLIENTS
                     </div>
 
-                    <div class="separator"></div>
-
                     <div class="layout">
                         <i class="fa-regular fa-square-check"></i>
                         HÉBERGEURS
                     </div>
-
-                    <div class="separator"></div>
                 </div>
             </section>
 
