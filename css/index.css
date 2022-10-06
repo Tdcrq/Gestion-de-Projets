@@ -6,24 +6,20 @@ body {
 /* NAVBAR */
 nav {
     width: 100%;
-    background-color: #cb7857;
+    background-color: var(--main-color);
     display: flex;
     flex-direction: row;
     align-items: center;
     height: 10vh;
 }
 
-.div-logo-nav {
-    width: auto;
-    margin: 2em;
-}
-
 .logo {
+    margin: 2em;
     width: 14em;
 }
 
 .nav-icon {
-    color: white;
+    color: var(--white);
     font-size: 1.8em;
 }
 
@@ -31,17 +27,40 @@ nav {
 main {
     display: flex;
     flex-direction: row;
-    background: #e4e4e4;
-    height: 90vh;
+    background: var(--bg-color);
+    height: 75vh;
     width: auto;
 }
 
 /* LEFT-SECTION */
 .left-section {
-    background-color: #fff;
+    background-color: var(--white);
     width: 20em;
     height: 75vh;
     margin-right: 2vw;
 }
 
+.layouts {
+    margin-top: 4em;
+}
+
+.layout {
+    font-weight: bold;
+    margin-left: 1.5em;
+}
+
+.layout i {
+    margin-right: 3px;
+}
+
+.separator {
+    border-bottom: 1px solid var(--bg-color);
+    margin: 1em 0;
+}
 /* RIGHT-SECTION */
+
+/* FOOTER */
+footer {
+    height: 15vh;
+    background: var(--bg-color);
+}
