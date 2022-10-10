@@ -2,7 +2,7 @@ CREATE TABLE Customer
 (
 id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
         code VARCHAR(255),
-        name VARCHAR(255),
+        name VARCHAR(255) NOT NULL,
         notes TEXT(1000)
 );
 
@@ -11,7 +11,7 @@ CREATE TABLE Host
 (
         id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
         code VARCHAR(255),
-        name VARCHAR(255),
+        name VARCHAR(255) NOT NULL,
         notes TEXT(1000)
 );
 
@@ -30,14 +30,14 @@ CREATE TABLE Contact
 CREATE TABLE Project
 (
         id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-        name VARCHAR(255),
+        name VARCHAR(255) NOT NULL,
         code VARCHAR(255),
         lastpass_folder VARCHAR(255),
         link_mock_ups VARCHAR(255),
         managed_server TINYINT(1),
         notes TEXT(1000),
-        host_id INT,
-        customer_id INT,
+        host_id INT NOT NULL,
+        customer_id INT NOT NULL,
         FOREIGN KEY (host_id) REFERENCES Host(id),
         FOREIGN KEY (customer_id) REFERENCES Customer(id)
 );
