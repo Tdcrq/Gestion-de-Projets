@@ -1,0 +1,54 @@
+INSERT INTO `customer`(`code`, `name`, `notes`) VALUES ("AZD55","jean","Lorem ipsum dolor sit amet. Nullam eu aliquam sapien molestie quis.");
+INSERT INTO `customer`(`code`, `name`, `notes`) VALUES ("QDF46","lilou","Lorem ipsum dolor sit amet. Nullam eu aliquam sapien molestie quis.");
+INSERT INTO `customer`(`code`, `name`, `notes`) VALUES ("CUHDCH","louis","Lorem ipsum dolor sit amet. Nullam eu aliquam sapien molestie quis.");
+INSERT INTO `customer`(`code`, `name`, `notes`) VALUES ("AZD55","jean","Lorem ipsum dolor sit amet. Nullam eu aliquam sapien molestie quis.");
+INSERT INTO `customer`(`code`, `name`, `notes`) VALUES ("QDF46","lilou","Lorem ipsum dolor sit amet.");
+INSERT INTO `customer`(`code`, `name`, `notes`) VALUES ("CUHDCH","louis","Nullam eu aliquam sapien molestie quis.");
+INSERT INTO `customer`(`code`, `name`, `notes`) VALUES ("AZD55","jean","Lorem ipsum aliquam sapien molestie quis.");
+INSERT INTO `customer`(`code`, `name`, `notes`) VALUES ("QDF46","lilou","Lorem ipsum dolor sit molestie quis.");
+INSERT INTO `customer`(`code`, `name`, `notes`) VALUES ("CUHDCH","louis","Lorem ipsum dolor sit amet. Nullam eu aliquam sapien molestie quis.");
+INSERT INTO `customer`(`code`, `name`, `notes`) VALUES ("CUHDCH","louis","Lorem ipsum dolor sit amet. Nullam eu aliquam sapien molestie quis.");
+
+INSERT INTO `host`(`code`, `name`, `notes`) VALUES ("ADGT64","loris","Lorem ipsum dolor sit amet. Nullam eu aliquam sapien molestie quis.");
+INSERT INTO `host`(`code`, `name`, `notes`) VALUES ("kjzoco5","hugo","Lorem ipsum dolor sit amet. Nullam eu aliquam sapien molestie quis.");
+INSERT INTO `host`(`code`, `name`, `notes`) VALUES ("jisix32","tristan","Lorem ipsum dolor sit amet. Nullam eu aliquam sapien molestie quis.");
+INSERT INTO `host`(`code`, `name`, `notes`) VALUES ("ADGT64","loris","Lorem ipsum dolor sit amet. Nullam eu aliquam sapien molestie quis.");
+INSERT INTO `host`(`code`, `name`, `notes`) VALUES ("kjzoco5","hugo","Lorem ipsum dolor sit amet. Nullam eu aliquam sapien molestie quis.");
+INSERT INTO `host`(`code`, `name`, `notes`) VALUES ("jisix32","tristan","Lorem ipsum dolor sit amet. Nullam eu aliquam sapien molestie quis.");
+INSERT INTO `host`(`code`, `name`, `notes`) VALUES ("ADGT64","loris","Lorem ipsum dolor sit amet. Nullam eu aliquam sapien molestie quis.");
+INSERT INTO `host`(`code`, `name`, `notes`) VALUES ("kjzoco5","hugo","Lorem ipsum dolor sit amet. Nullam eu aliquam sapien molestie quis.");
+INSERT INTO `host`(`code`, `name`, `notes`) VALUES ("jisix32","tristan","Lorem ipsum dolor sit amet. Nullam eu aliquam sapien molestie quis.");
+INSERT INTO `host`(`code`, `name`, `notes`) VALUES ("jisix32","tristan","Lorem ipsum dolor sit amet. Nullam eu aliquam sapien molestie quis.");
+
+INSERT INTO `contact`(`email`, `phone_number`, `role`, `host_id`, `customer_id`) VALUES ("jean@gmail.com","0789547521","Lorem ipsum dolor sit amet. Nullam eu aliquam sapien molestie quis.","1","9");
+INSERT INTO `contact`(`email`, `phone_number`, `role`, `host_id`, `customer_id`) VALUES ("lilou@gmail.com","0300563494","Lorem ipsum dolor sit amet. Nullam eu aliquam sapien molestie quis.","1","10");
+INSERT INTO `contact`(`email`, `phone_number`, `role`, `host_id`, `customer_id`) VALUES ("louis@gmail.com","0610457530","Lorem ipsum dolor sit amet. Nullam eu aliquam sapien molestie quis.","2","8");
+INSERT INTO `contact`(`email`, `phone_number`, `role`, `host_id`, `customer_id`) VALUES ("jean@gmail.com","0789547521","Lorem ipsum dolor sit amet. Nullam eu aliquam sapien molestie quis.","2","6");
+INSERT INTO `contact`(`email`, `phone_number`, `role`, `host_id`, `customer_id`) VALUES ("lilou@gmail.com","0300563494","Lorem ipsum dolor sit amet. Nullam eu aliquam sapien molestie quis.","3","7");
+INSERT INTO `contact`(`email`, `phone_number`, `role`, `host_id`, `customer_id`) VALUES ("louis@gmail.com","0610457530","Lorem ipsum dolor sit amet. Nullam eu aliquam sapien molestie quis.","3","5");
+INSERT INTO `contact`(`email`, `phone_number`, `role`, `host_id`, `customer_id`) VALUES ("jean@gmail.com","0789547521","Lorem ipsum dolor sit amet. Nullam eu aliquam sapien molestie quis.","4","4");
+INSERT INTO `contact`(`email`, `phone_number`, `role`, `host_id`, `customer_id`) VALUES ("lilou@gmail.com","0300563494","Lorem ipsum dolor sit amet. Nullam eu aliquam sapien molestie quis.","4","2");
+INSERT INTO `contact`(`email`, `phone_number`, `role`, `host_id`, `customer_id`) VALUES ("louis@gmail.com","0610457530","Lorem ipsum dolor sit amet. Nullam eu aliquam sapien molestie quis.","5","3");
+INSERT INTO `contact`(`email`, `phone_number`, `role`, `host_id`, `customer_id`) VALUES ("louis@gmail.com","0610457530","Lorem ipsum dolor sit amet. Nullam eu aliquam sapien molestie quis.","5","1");
+
+INSERT INTO `project`(`name`, `code`, `lastpass_folder`, `link_mock_ups`, `managed_server`, `notes`, `host_id`, `customer_id`) VALUES ("projet1","JIJI77","un fichier","unLien","1","Lorem ipsum dolor sit amet. Nullam eu aliquam sapien molestie quis.","1","9");
+INSERT INTO `project`(`name`, `code`, `lastpass_folder`, `link_mock_ups`, `managed_server`, `notes`, `host_id`, `customer_id`) VALUES ("projet2","SQDFF555","un fichier 2","unLien","0","Lorem ipsum dolor sit amet. Nullam eu aliquam sapien molestie quis.","1","10");
+INSERT INTO `project`(`name`, `code`, `lastpass_folder`, `link_mock_ups`, `managed_server`, `notes`, `host_id`, `customer_id`) VALUES ("projet3","LMPP667","un fichier 3","unLien","0","Lorem ipsum dolor sit amet. Nullam eu aliquam sapien molestie quis.","2","8");
+INSERT INTO `project`(`name`, `code`, `lastpass_folder`, `link_mock_ups`, `managed_server`, `notes`, `host_id`, `customer_id`) VALUES ("projet4","JIJI77","un fichier4","unLien","1","Lorem ipsum dolor sit amet. Nullam eu aliquam sapien molestie quis.","2","6");
+INSERT INTO `project`(`name`, `code`, `lastpass_folder`, `link_mock_ups`, `managed_server`, `notes`, `host_id`, `customer_id`) VALUES ("projet5","JIJI77","un fichier5","unLien","1","Lorem ipsum dolor sit amet. Nullam eu aliquam sapien molestie quis.","3","7");
+INSERT INTO `project`(`name`, `code`, `lastpass_folder`, `link_mock_ups`, `managed_server`, `notes`, `host_id`, `customer_id`) VALUES ("projet6","JIJI77","un fichier6","unLien","1","Lorem ipsum dolor sit amet. Nullam eu aliquam sapien molestie quis.","3","5");
+INSERT INTO `project`(`name`, `code`, `lastpass_folder`, `link_mock_ups`, `managed_server`, `notes`, `host_id`, `customer_id`) VALUES ("projet7","SQDFF555","un fichier 7","unLien","0","Lorem ipsum dolor sit amet. Nullam eu aliquam sapien molestie quis.","4","4");
+INSERT INTO `project`(`name`, `code`, `lastpass_folder`, `link_mock_ups`, `managed_server`, `notes`, `host_id`, `customer_id`) VALUES ("projet8","LMPP667","un fichier 8","unLien","0","Lorem ipsum dolor sit amet. Nullam eu aliquam sapien molestie quis.","4","2");
+INSERT INTO `project`(`name`, `code`, `lastpass_folder`, `link_mock_ups`, `managed_server`, `notes`, `host_id`, `customer_id`) VALUES ("projet9","JIJI77","un fichier 9","unLien","1","Lorem ipsum dolor sit amet. Nullam eu aliquam sapien molestie quis.","5","3");
+INSERT INTO `project`(`name`, `code`, `lastpass_folder`, `link_mock_ups`, `managed_server`, `notes`, `host_id`, `customer_id`) VALUES ("projet10","JIJI77","un fichier 10","unLien","0","Lorem ipsum dolor sit amet. Nullam eu aliquam sapien molestie quis.","5","1");
+
+INSERT INTO `environment`(`name`, `link`, `ip_address`, `ssh_port`, `ssh_userame`, `phpmyadmin_link`, `ip_restriction`, `project_id`) VALUES ("env1","htpps://.....","168.212.226.204","80","root","unLienBDD","1","3");
+INSERT INTO `environment`(`name`, `link`, `ip_address`, `ssh_port`, `ssh_userame`, `phpmyadmin_link`, `ip_restriction`, `project_id`) VALUES ("env2","http://localhost/","168.212.226.204","800","root2","unLienBDD","0","1");
+INSERT INTO `environment`(`name`, `link`, `ip_address`, `ssh_port`, `ssh_userame`, `phpmyadmin_link`, `ip_restriction`, `project_id`) VALUES ("env3","htpp://.....","168.212.226.204","80","root","unLienBDD","1","2");
+INSERT INTO `environment`(`name`, `link`, `ip_address`, `ssh_port`, `ssh_userame`, `phpmyadmin_link`, `ip_restriction`, `project_id`) VALUES ("env1","htpps://.....","168.212.226.204","80","root","unLienBDD","1","6");
+INSERT INTO `environment`(`name`, `link`, `ip_address`, `ssh_port`, `ssh_userame`, `phpmyadmin_link`, `ip_restriction`, `project_id`) VALUES ("env2","http://localhost/","168.212.226.204","800","root2","unLienBDD","0","4");
+INSERT INTO `environment`(`name`, `link`, `ip_address`, `ssh_port`, `ssh_userame`, `phpmyadmin_link`, `ip_restriction`, `project_id`) VALUES ("env3","htpp://.....","168.212.226.204","80","root","unLienBDD","1","5");
+INSERT INTO `environment`(`name`, `link`, `ip_address`, `ssh_port`, `ssh_userame`, `phpmyadmin_link`, `ip_restriction`, `project_id`) VALUES ("env1","htpps://.....","168.212.226.204","80","root","unLienBDD","1","9");
+INSERT INTO `environment`(`name`, `link`, `ip_address`, `ssh_port`, `ssh_userame`, `phpmyadmin_link`, `ip_restriction`, `project_id`) VALUES ("env2","http://localhost/","168.212.226.204","800","root2","unLienBDD","0","7");
+INSERT INTO `environment`(`name`, `link`, `ip_address`, `ssh_port`, `ssh_userame`, `phpmyadmin_link`, `ip_restriction`, `project_id`) VALUES ("env3","htpp://.....","168.212.226.204","80","root","unLienBDD","1","8");
+INSERT INTO `environment`(`name`, `link`, `ip_address`, `ssh_port`, `ssh_userame`, `phpmyadmin_link`, `ip_restriction`, `project_id`) VALUES ("env2","http://localhost/","168.212.226.204","800","root2","unLienBDD","0","10");
