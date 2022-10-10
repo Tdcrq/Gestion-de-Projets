@@ -1,7 +1,7 @@
 <?php
 namespace App\Require\Interface;
 
-interface AssesseurInterface
+interface CommonPropertyInterface
 {
     public function getId(): int;
     public function getName(): ?string;

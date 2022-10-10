@@ -1,10 +1,15 @@
 <?php
 namespace App\Class;
-use App\Require\classInterface;
-use App\Require\classTrait;
 
-class Customer implements classInterface{
-    use classTrait;
+use App\Require\Interface\CommonPropertyInterface;
+use App\Require\Trait\CodeTrait;
+use App\Require\Trait\NameTrait;
+use App\Require\Trait\IdTrait;
+use App\Require\Trait\NotesTrait;
+
+class Customer implements CommonPropertyInterface{
+    
+    use IdTrait, NameTrait, NotesTrait, CodeTrait;
     
     public function __construct(
         private string $code, 

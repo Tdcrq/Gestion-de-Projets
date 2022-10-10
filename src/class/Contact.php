@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Class;
+use App\Require\Trait\IdTrait;
 
 class Contact
 {
-    private int $id;
+    use IdTrait;
 
     public function __construct(
         private string $email, 

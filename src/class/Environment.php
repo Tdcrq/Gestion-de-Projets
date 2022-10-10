@@ -1,8 +1,13 @@
 <?php
+
 namespace App\Class;
 
-class Environment {
-    private int $id;
+use App\require\Interface\EnvironmentInterface;
+use App\Require\Trait\IdTrait;
+
+class Environment implements EnvironmentInterface{
+    
+    use IdTrait;
 
     public function __construct(
         private string $name, 
