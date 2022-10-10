@@ -1,3 +1,7 @@
+<?php
+require(__DIR__."/require/autoloader.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>

@@ -7,7 +7,7 @@ class Autoloader{
             $file = str_replace('\\', DIRECTORY_SEPARATOR, $class) . '.php';
             $fileArray = explode(DIRECTORY_SEPARATOR, $file);
             if($fileArray[0] == "App"){
-                $fileArray[0] = "SRC";
+                $fileArray[0] = "src";
             }
             //$file = implode(','$fileArray);
             $file = implode(DIRECTORY_SEPARATOR, $fileArray);
