@@ -10,7 +10,6 @@ use App\Require\Trait\NotesTrait;
 class Host implements CommonPropertyInterface
 {
     use IdTrait, NameTrait, NotesTrait, CodeTrait;
-
     public function __construct(
         private string $code, 
         private string $name,

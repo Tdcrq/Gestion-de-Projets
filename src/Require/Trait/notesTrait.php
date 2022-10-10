@@ -2,8 +2,7 @@
 namespace App\Require\Trait;
 
 trait NotesTrait {
-    private string $notes;
-
+    
     public function getNotes(): string 
     {
         return $this->notes;

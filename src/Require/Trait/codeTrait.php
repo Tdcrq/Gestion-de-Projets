@@ -2,7 +2,6 @@
 namespace App\Require\Trait;
 
 trait CodeTrait {
-    private string $code;
 
     public function getCode(): string
     {

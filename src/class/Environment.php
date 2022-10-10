@@ -2,7 +2,7 @@
 
 namespace App\Class;
 
-use App\require\Interface\EnvironmentInterface;
+use App\Require\Interface\EnvironmentInterface;
 use App\Require\Trait\IdTrait;
 
 class Environment implements EnvironmentInterface{
