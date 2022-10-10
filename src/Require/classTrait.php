@@ -1,4 +1,5 @@
 <?php
+namespace App\Require;
 
 trait classTrait {
     private int $int;

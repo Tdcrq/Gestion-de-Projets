@@ -1,7 +1,8 @@
 <?php 
 
-    require_once(__DIR__ . '/Customer.php');
-    require_once(__DIR__ . '/Host.php');
+    namespace App\Class;
+    use App\Require\classInterface;
+    use App\Require\classTrait;
 
     class Project implements classInterface
     {

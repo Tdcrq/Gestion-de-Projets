@@ -1,5 +1,12 @@
 <?php
-require(__DIR__."/require/autoloader.php");
+require(__DIR__."/src/Require/autoloader.php");
+
+use App\Class\Host;
+use App\Class\Contact;
+use App\Class\Customer;
+use App\Class\Environment;
+use App\Class\Project;
+
 ?>
 
 <!DOCTYPE html>

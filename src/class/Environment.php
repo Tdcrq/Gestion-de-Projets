@@ -1,5 +1,5 @@
 <?php
-require_once(__DIR__.'/Project.php');
+namespace App\Class;
 
 class Environment {
     private int $id;
