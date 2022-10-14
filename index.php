@@ -7,7 +7,15 @@ use App\Class\Customer;
 use App\Class\Environment;
 use App\Class\Project;
 
+use App\Class\Hydrate;
+if(isset($_POST[""]))
+{
+    $data = array($_POST["code"], $_POST["name"], $_POST["notes"]);
+    Hydrate::addCustomer($data);
+    var_dump(Hydrate::getAttibutsCustomer());
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
