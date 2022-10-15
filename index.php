@@ -8,11 +8,11 @@ use App\Class\Environment;
 use App\Class\Project;
 
 use App\Class\FormTreatment\Hydrate;
-if(isset($_POST[""]))
+if(!isset($_POST[""]))
 {
-    $data = array($_POST["code"], $_POST["name"], $_POST["notes"]);
+    $data = array("code", "name", "notes");
     Hydrate::addCustomer($data);
-    var_dump(Hydrate::getAttibutsCustomer());
+    
 }
 ?>
 

@@ -7,7 +7,7 @@ use App\Class\FormTreatment\Hydrate;
 
 class Validator {
 
-    private static function inputSecurityFunction($data):string
+    private static function inputSecurityFunction(string $data):string
     {
         $data = trim($data);
         $data = stripslashes($data);
@@ -16,11 +16,11 @@ class Validator {
         return $data;
     }
 
-    public static function inputVerificationFunction(array $customerInValidation): array
+    public static function inputVerificationFunction(Customer $customerInValidation): array
     {
-        $code  = Validator::inputSecurityFunction($customerInValidation[0]);
-        $name  = Validator::inputSecurityFunction($customerInValidation[1]);
-        $notes = Validator::inputSecurityFunction($customerInValidation[2]);
+        $code  = Validator::inputSecurityFunction($customerInValidation->getName());
+        $name  = Validator::inputSecurityFunction($customerInValidation->getName());
+        $notes = Validator::inputSecurityFunction($customerInValidation->getNotes());
         $isValid = true;
 
         if(strlen($code) != 20)
@@ -35,10 +35,10 @@ class Validator {
             $errorMsg = $errorMsg + "Le nom doit contenir 1-255 caractère(s).\n";
         }
 
-        if(strlen($notes) == 0 || strlen($name) > 1000)
+        if(strlen($name) > 1000)
         {
             $isValid = false;
-            $errorMsg = $errorMsg + "Notes doit contenir 1-1000 caractère(s).\n";
+            $errorMsg = $errorMsg + "Notes doit contenir un maximum de 1000 caractère(s).\n";
         }
 
         if($isValid == true)

@@ -18,6 +18,7 @@ class Hydrate {
         return array(
             Hydrate::$customerInValidation->getCode(), 
             Hydrate::$customerInValidation->getName(), 
-            Hydrate::$customerInValidation->getNotes());
+            Hydrate::$customerInValidation->getNotes()
+        );
     }
 }
