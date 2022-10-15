@@ -3,7 +3,6 @@
 namespace App\Class\FormTreatment;
 
 use App\Class\Customer;
-use App\Class\FormTreatment\Hydrate;
 
 class Validator {
 
@@ -18,21 +17,15 @@ class Validator {
 
     public static function inputVerificationFunction(Customer $customerInValidation): array
     {
-        $code  = Validator::inputSecurityFunction($customerInValidation->getName());
+        $code  = Validator::inputSecurityFunction($customerInValidation->getcode());
         $name  = Validator::inputSecurityFunction($customerInValidation->getName());
         $notes = Validator::inputSecurityFunction($customerInValidation->getNotes());
         $isValid = true;
 
-        if(strlen($code) != 20)
-        {
-            $isValid = false;
-            $errorMsg = "Erreur de traitement, réssayer plus tard.. \n";
-        }
-
         if(strlen($name) == 0 || strlen($name) > 255)
         {
             $isValid = false;
-            $errorMsg = $errorMsg + "Le nom doit contenir 1-255 caractère(s).\n";
+            $errorMsg = "Le nom doit contenir 1-255 caractère(s).\n";
         }
 
         if(strlen($name) > 1000)
