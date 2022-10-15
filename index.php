@@ -11,8 +11,7 @@ use App\Class\FormTreatment\Hydrate;
 if(!isset($_POST[""]))
 {
     $data = array("code", "name", "notes");
-    Hydrate::addCustomer($data);
-    
+    $customer = Hydrate::addCustomer($data);
 }
 ?>
 

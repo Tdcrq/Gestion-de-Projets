@@ -11,7 +11,7 @@ class Autoloader{
             }
             //$file = implode(','$fileArray);
             $file = implode(DIRECTORY_SEPARATOR, $fileArray);
-            var_dump($file);
+            // var_dump($file);
             if(file_exists($file)) {
                 require $file;
                 return true;
