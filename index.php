@@ -8,6 +8,11 @@ use App\Class\Environment;
 use App\Class\Project;
 
 use App\Class\FormTreatment\Hydrate;
+use App\Class\DB\ConnexionBdd;
+
+$config = new ConnexionBdd();
+$co = $config->co();
+
 if(!isset($_POST[""]))
 {
     $data = array("code", "name", "notes");
@@ -60,7 +65,11 @@ if(!isset($_POST[""]))
                 </div>
             </section>
 
-            <section class="right-section"></section>
+            <section class="right-section">
+                <?php
+                require"src/Require/right-section/upd_user.php";
+                ?>
+            </section>
         </main>
     </body>
 
