@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Class;
+namespace App\Class\FormTreatment;
+
+use App\Class\Customer;
 
 class Hydrate {
 
