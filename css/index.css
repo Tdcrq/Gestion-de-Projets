@@ -2,7 +2,6 @@
 body {
     margin: 0;
 }
-
 /* NAVBAR */
 nav {
     width: 100%;
@@ -54,8 +53,85 @@ main {
     margin-right: 3px;
 }
 
-/* RIGHT-SECTION */
+/* RIGHT-SECTION NEW USER*/
+.right-section{
+    display: flex;
+    flex-direction: column;
+}
+.title-right-section{
+    margin-top: 2.5vh;
+    font-size: 2.5em;
+    margin-bottom: 7vh;
+}
 
+.btn-form-top{
+    text-decoration: none;
+    color: var(--black);
+    background-color: var(--white);
+    padding: 1em;
+    margin-right: 0.5vw;
+}
+
+#contacts{
+    background-color: #F2F2F2;
+}
+.right-contents{
+    background-color: var(--white);
+    width: 80vw;
+    height: 55.5vh;
+    margin-top: 2vh;
+
+}
+
+.add-user-form{
+    display: flex;
+    flex-direction: column;
+    padding-top: 7vh;
+    padding-left: 3vw;
+    margin-top: 1vh;
+    border-width: 2px;
+}
+
+.add-user-label{
+    display:inline-block;
+    width: 10vw;
+}
+
+.add-user-input{
+    width: 14vw;
+    height: 4vh;
+    margin-top: 1vh;
+    border-width: 2px;
+    border-color: var(--bg-color);
+    border-radius: 3%;
+}
+
+.add-user-textarea{
+    height: 15vh;
+}
+
+.btn-form-bottom{
+    margin-left: 65vw;
+    margin-top: 13vh;
+}
+
+#btn-cancel{
+    text-decoration: none;
+    color: var(--main-color);
+    background-color: var(--white);
+    height: 3.5vh;
+    width: 5vw;
+    border-color: var(--main-color);
+}
+
+#btn-save{
+    text-decoration: none;
+    color: var(--white);
+    background-color: var(--main-color);
+    height: 3.5vh;
+    width: 5vw;
+    border-color: var(--main-color);
+}
 /* FOOTER */
 footer {
     height: 15vh;
