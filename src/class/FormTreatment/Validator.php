@@ -17,7 +17,7 @@ class Validator {
 
     public static function inputVerificationFunction(Customer $customerInValidation): array
     {
-        $code  = Validator::inputSecurityFunction($customerInValidation->getcode());
+        $code  = Validator::inputSecurityFunction($customerInValidation->getCode());
         $name  = Validator::inputSecurityFunction($customerInValidation->getName());
         $notes = Validator::inputSecurityFunction($customerInValidation->getNotes());
         $isValid = true;
@@ -49,9 +49,5 @@ class Validator {
                 $errorMsg
             );
         }
-        
     }
-
-
-
 }
