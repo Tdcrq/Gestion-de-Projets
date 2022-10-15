@@ -8,6 +8,7 @@ class Hydrate {
 
     public static function addCustomer(array $data): Customer
     {
-        Hydrate::$customerInValidation = new Customer($data[0], $data[1], $data[2]);
+        $code = strtoupper(str_replace(" ", "_", $data[0]));
+        return new Customer($code, $data[1], $data[2]);
     }
 }
