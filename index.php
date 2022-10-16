@@ -14,6 +14,10 @@ use App\Class\FormTreatment\Insert;
 $config = new ConnexionBdd();
 $co = $config->co();
 
+$query = $co->prepare('SELECT * from customer');
+$query->execute();
+$fetch_customer = $query->fetchAll();
+
 $error = "";
 
 if(isset($_POST["add"]))
@@ -31,6 +35,11 @@ if(isset($_POST["add"]))
         $error = $validator[1];
     }
 }
+
+if(isset($_POST["update"]))
+{
+    echo "oui";
+}
 ?>
 
 <!DOCTYPE html>
@@ -44,7 +53,9 @@ if(isset($_POST["add"]))
         <!-- CSS -->
         <link rel="stylesheet" href="public/css/colors.css">
         <link rel="stylesheet" href="public/css/index.css">
+        <!-- JS -->
         <script src="public/js/getCode.js"></script>
+        <script src="public/js/getName.js"></script>
     </head>
 
     <body>
@@ -88,6 +99,18 @@ if(isset($_POST["add"]))
             <!-- Modal content -->
             <div class="modal-content">
                 <span class="close">&times;</span>
+                <div>
+                    <label class="add-user-label" for="name">Nom</label>
+                    <select class="add-user-input" type="text" id="name" name="name" onchange="showCode(this.value), showName(this.value)">
+                        <option value=""></option>
+                        <?php
+                        foreach ($fetch_customer as $customer)
+                        {
+                            echo "<option value='". $customer["id"] ."'>". $customer["name"] ."</option>";
+                        }
+                        ?>
+                    </select>
+                </div>
                 <p class="actionModal">Modifier</p>
                 <p class="actionModal">Ajouter</p>
             </div>
