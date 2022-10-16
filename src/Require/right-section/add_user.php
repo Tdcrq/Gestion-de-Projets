@@ -19,9 +19,7 @@
                 </div>
                 <div>
                     <label class="add-user-label" for="name">Notes / Remarques</label>
-                    <textarea class="add-user-textarea add-user-input"id="note" name="note">
-
-                    </textarea>    
+                    <textarea class="add-user-textarea add-user-input"id="note" name="note"></textarea>    
                 </div>
                 <div class="btn-form-bottom">
                     <input id="btn-cancel" type="submit" value="Annuler">

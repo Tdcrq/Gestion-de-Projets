@@ -40,7 +40,7 @@ if(isset($_POST["add"]))
 if(isset($_POST["update"]))
 {
     $name = $_POST["name"];
-    $note = $_POST["upd_note"];
+    $note = $_POST["note"];
     $id = $_COOKIE["id_customer"];
 
     $data = array(
@@ -111,7 +111,7 @@ if(isset($_POST["update"]))
             <section class="right-section">
                 <?php
                 require("src/Require/right-section/upd_user.php");
-                // require("src/Require/right-section/add_user.php");
+                require("src/Require/right-section/add_user.php");
                 ?>
             </section>
         </main>

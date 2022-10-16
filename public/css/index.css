@@ -180,3 +180,7 @@ footer {
     height: 15vh;
     background: var(--bg-color);
 }
+
+#add, #update {
+    display : none;
+}

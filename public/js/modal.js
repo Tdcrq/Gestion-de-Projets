@@ -22,6 +22,8 @@ window.onclick = function(event) {
 
 actionModalList[0].addEventListener('click', () =>{
     // document.getElementsById("add").style.display = hidden;
+    document.getElementById("add").style.display = "none";
+    document.getElementById("update").style.display = "block";
     document.cookie = "route=Clients/modify";
     document.cookie = "id_customer=" + select.options[select.selectedIndex].value;
     console.log(document.cookie);
@@ -29,6 +31,8 @@ actionModalList[0].addEventListener('click', () =>{
 }) 
 actionModalList[1].addEventListener('click', () =>{
     // document.getElementsById("update").style.display = hidden;
+    document.getElementById("update").style.display = "none";
+    document.getElementById("add").style.display = "block";
     document.cookie = "route=Clients/add";
     console.log(document.cookie);
     modal.style.display = "none";
