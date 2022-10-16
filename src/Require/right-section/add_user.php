@@ -9,6 +9,7 @@
     <div>
         <form class="add-user-form" method="post">
             <div>
+                <p class="error"><?php echo $error; ?></p>
                 <label class="add-user-label" for="name">Nom</label>
                 <input class="add-user-input" type="text" id="name" name="name">
             </div>
@@ -23,8 +24,8 @@
                 </textarea>    
             </div>
             <div class="btn-form-bottom">
-                <input id="btn-cancel" type="submit" placeholder="Annuler">
-                <input id="btn-save" type="submit" placeholder="Sauvegarder">
+                <input id="btn-cancel" type="submit" value="Annuler">
+                <input id="btn-save" type="submit" name="add" value="Sauvegarder">
             </div>
         </form>
     </div>

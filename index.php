@@ -6,17 +6,30 @@ use App\Class\Contact;
 use App\Class\Customer;
 use App\Class\Environment;
 use App\Class\Project;
-
-use App\Class\FormTreatment\Hydrate;
 use App\Class\DB\ConnexionBdd;
+use App\Class\FormTreatment\Hydrate;
+use App\Class\FormTreatment\Validator;
+use App\Class\FormTreatment\Insert;
 
 $config = new ConnexionBdd();
 $co = $config->co();
 
-if(!isset($_POST[""]))
+$error = "";
+
+if(isset($_POST["add"]))
 {
-    $data = array("code", "name", "notes");
+    $data = array(
+        $_POST["name"], 
+        $_POST["note"]
+    );
     $customer = Hydrate::addCustomer($data);
+    $validator = Validator::inputVerificationFunction($customer);
+    if(gettype($validator[0]) === "string")
+    {
+        Insert::Insert($co, $validator);
+    }else{
+        $error = $validator[1];
+    }
 }
 ?>
 
@@ -30,13 +43,14 @@ if(!isset($_POST[""]))
         <!-- ICON -->
         <script src="https://kit.fontawesome.com/96626c594d.js" crossorigin="anonymous"></script>
         <!-- CSS -->
-        <link rel="stylesheet" href="css/colors.css">
-        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="public/css/colors.css">
+        <link rel="stylesheet" href="public/css/index.css">
+        <script src="public/js/getCode.js"></script>
     </head>
 
     <body>
         <nav>
-            <img class="logo" src="image/logo-mentalworks-blanc.png" alt="ERROR">
+            <img class="logo" src="public/image/logo-mentalworks-blanc.png" alt="ERROR">
             <i class="nav-icon fa-solid fa-bars"></i>
         </nav>
 
