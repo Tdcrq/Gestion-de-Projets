@@ -111,7 +111,7 @@ if(isset($_POST["update"]))
             <section class="right-section">
                 <?php
                 require("src/Require/right-section/upd_user.php");
-                require("src/Require/right-section/add_user.php");
+                // require("src/Require/right-section/add_user.php");
                 ?>
             </section>
         </main>
