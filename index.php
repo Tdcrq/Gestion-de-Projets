@@ -10,6 +10,7 @@ use App\Class\DB\ConnexionBdd;
 use App\Class\FormTreatment\Hydrate;
 use App\Class\FormTreatment\Validator;
 use App\Class\FormTreatment\Insert;
+use App\Class\FormTreatment\Update;
 
 $config = new ConnexionBdd();
 $co = $config->co();
@@ -38,7 +39,24 @@ if(isset($_POST["add"]))
 
 if(isset($_POST["update"]))
 {
-    echo "oui";
+    $name = $_POST["name"];
+    $note = $_POST["upd_note"];
+    $id = $_COOKIE["id_customer"];
+
+    $data = array(
+        $name,
+        $note
+    );
+
+    $customer = Hydrate::addCustomer($data);
+    $validator = Validator::inputVerificationFunction($customer);
+    if(gettype($validator[0]) === "string")
+    {
+        Update::UpdateCustomer($co, $validator, $id);
+        header("Refresh:0");
+    }else{
+        $error = $validator[1];
+    }
 }
 ?>
 
@@ -54,8 +72,9 @@ if(isset($_POST["update"]))
         <link rel="stylesheet" href="public/css/colors.css">
         <link rel="stylesheet" href="public/css/index.css">
         <!-- JS -->
-        <script src="public/js/getCode.js"></script>
-        <script src="public/js/getName.js"></script>
+        <script src="public/js/getData/getCode.js"></script>
+        <script src="public/js/getData/getName.js"></script>
+        <script src="public/js/getData/getNotes.js"></script>
     </head>
 
     <body>
@@ -91,7 +110,8 @@ if(isset($_POST["update"]))
 
             <section class="right-section">
                 <?php
-                require"src/Require/right-section/upd_user.php";
+                require("src/Require/right-section/upd_user.php");
+                require("src/Require/right-section/add_user.php");
                 ?>
             </section>
         </main>
@@ -100,8 +120,8 @@ if(isset($_POST["update"]))
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <div>
-                    <label class="add-user-label" for="name">Nom</label>
-                    <select class="add-user-input" type="text" id="name" name="name" onchange="showCode(this.value), showName(this.value)">
+                    <label class="add-user-label" for="id_customer">Nom</label>
+                    <select class="add-user-input" type="text" id="id_customer" name="name" onchange="showCode(this.value), showName(this.value), showNotes(this.value)">
                         <option value=""></option>
                         <?php
                         foreach ($fetch_customer as $customer)
@@ -117,37 +137,8 @@ if(isset($_POST["update"]))
         </div>
     </body>
 
-    <script>
-        let currentBtn = document.querySelector('.clients');
-
-        let modal = document.getElementById("myModal");
-        let actionModalList = document.querySelectorAll('.actionModal');
-        let spanModal = document.getElementsByClassName("close")[0];
-
-        console.log(modal.innerHTML);
-        currentBtn.addEventListener('click', () => {
-            modal.style.display = "block";
-        });
-
-        spanModal.onclick = function() {
-            modal.style.display = "none";
-        }
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-        }
-
-        actionModalList[0].addEventListener('click', () =>{
-            document.cookie = "route=Clients/modify";
-            console.log(document.cookie);
-        }) 
-        actionModalList[1].addEventListener('click', () =>{
-            document.cookie = "route=Clients/add";
-            console.log(document.cookie);
-        }) 
-    </script>
+    <script src="public/js/modal.js"></script>
+    <script src="public/js/check_cookie.js"></script>
 
     <footer>
     </footer>
