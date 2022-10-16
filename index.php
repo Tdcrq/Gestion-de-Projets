@@ -33,7 +33,6 @@ if(isset($_POST["add"]))
 }
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -62,17 +61,17 @@ if(isset($_POST["add"]))
                         TABLEAU DE BORD
                     </div>
 
-                    <div class="layout">
+                    <div class="layout project">
                         <i class="fa-solid fa-circle-user"></i>
                         PROJETS
                     </div>
 
-                    <div class="layout">
+                    <div class="layout clients">
                         <i class="fa-solid fa-book"></i>
                         CLIENTS
                     </div>
 
-                    <div class="layout">
+                    <div class="layout heberg">
                         <i class="fa-regular fa-square-check"></i>
                         HÉBERGEURS
                     </div>
@@ -85,7 +84,47 @@ if(isset($_POST["add"]))
                 ?>
             </section>
         </main>
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p class="actionModal">Modifier</p>
+                <p class="actionModal">Ajouter</p>
+            </div>
+        </div>
     </body>
+
+    <script>
+        let currentBtn = document.querySelector('.clients');
+
+        let modal = document.getElementById("myModal");
+        let actionModalList = document.querySelectorAll('.actionModal');
+        let spanModal = document.getElementsByClassName("close")[0];
+
+        console.log(modal.innerHTML);
+        currentBtn.addEventListener('click', () => {
+            modal.style.display = "block";
+        });
+
+        spanModal.onclick = function() {
+            modal.style.display = "none";
+        }
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+        }
+
+        actionModalList[0].addEventListener('click', () =>{
+            document.cookie = "route=Clients/modify";
+            console.log(document.cookie);
+        }) 
+        actionModalList[1].addEventListener('click', () =>{
+            document.cookie = "route=Clients/add";
+            console.log(document.cookie);
+        }) 
+    </script>
 
     <footer>
     </footer>
