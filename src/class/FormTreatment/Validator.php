@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Class\FormTreatment;
 
 use App\Class\Customer;
