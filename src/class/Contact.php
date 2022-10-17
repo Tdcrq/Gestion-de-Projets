@@ -1,6 +1,6 @@
 <?php
-
 namespace App\Class;
+
 use App\Require\Trait\IdTrait;
 
 class Contact

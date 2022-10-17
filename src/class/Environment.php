@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Class;
 
 use App\Require\Interface\EnvironmentInterface;

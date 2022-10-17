@@ -1,6 +1,6 @@
 <?php
-
 namespace App\Class;
+
 use App\Require\Interface\CommonPropertyInterface;
 use App\Require\Trait\CodeTrait;
 use App\Require\Trait\NameTrait;
