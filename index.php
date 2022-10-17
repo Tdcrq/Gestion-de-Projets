@@ -131,8 +131,8 @@ if(isset($_POST["update"]))
                         ?>
                     </select>
                 </div>
-                <p class="actionModal">Modifier</p>
-                <p class="actionModal">Ajouter</p>
+                <p class="actionModal bn19">Modifier</p>
+                <p class="actionModal bn19">Ajouter</p>
             </div>
         </div>
     </body>
