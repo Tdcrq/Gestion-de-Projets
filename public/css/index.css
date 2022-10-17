@@ -27,15 +27,14 @@ main {
     display: flex;
     flex-direction: row;
     background: var(--bg-color);
-    height: 75vh;
+    height: 90vh;
     width: auto;
 }
 
 /* LEFT-SECTION */
 .left-section {
     background-color: var(--white);
-    width: 20em;
-    height: 75vh;
+    width: 30vh;
     margin-right: 2vw;
 }
 
@@ -56,7 +55,12 @@ main {
 /* RIGHT-SECTION NEW USER*/
 .right-section{
     display: flex;
+    height: 100%;
     flex-direction: column;
+}
+
+#note{
+    max-height: 200px;
 }
 .title-right-section{
     margin-top: 2.5vh;
@@ -78,9 +82,7 @@ main {
 .right-contents{
     background-color: var(--white);
     width: 80vw;
-    height: 55.5vh;
     margin-top: 2vh;
-
 }
 
 .error{
@@ -91,9 +93,7 @@ main {
 .add-user-form{
     display: flex;
     flex-direction: column;
-    padding-top: 7vh;
-    padding-left: 3vw;
-    margin-top: 1vh;
+    padding: 2% 3%;
     border-width: 2px;
 }
 
@@ -116,8 +116,10 @@ main {
 }
 
 .btn-form-bottom{
-    margin-left: 65vw;
-    margin-top: 13vh;
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+    margin: 0 2%;
 }
 
 #btn-cancel{
@@ -125,16 +127,17 @@ main {
     color: var(--main-color);
     background-color: var(--white);
     height: 3.5vh;
-    width: 5vw;
+    width: fit-content;
     border-color: var(--main-color);
 }
 
 #btn-save{
     text-decoration: none;
     color: var(--white);
+    margin-left: 10px;
     background-color: var(--main-color);
     height: 3.5vh;
-    width: 5vw;
+    width: fit-content;
     border-color: var(--main-color);
 }
 /* The Modal (background) */
@@ -154,17 +157,58 @@ background-color: rgba(0,0,0,0.4);
 
 /* Modal Content */
 .modal-content {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
 background-color: #fefefe;
 margin: auto;
 padding: 20px;
+border-radius: 8px;
 border: 1px solid #888;
 width: 80%;
 }
+/* actionModal */
+.actionModal {
+font-size: 16px;
+font-weight: 600;
+color: #fff;
+cursor: pointer;
+padding: 10px 30px;
+text-align:center;
+border: none;
+background-size: 300% 100%;
+border-radius: 50px;
+moz-transition: all .4s ease-in-out;
+-o-transition: all .4s ease-in-out;
+-webkit-transition: all .4s ease-in-out;
+transition: all .4s ease-in-out;
+}
 
+.actionModal:hover {
+background-position: 100% 0;
+moz-transition: all .4s ease-in-out;
+-o-transition: all .4s ease-in-out;
+-webkit-transition: all .4s ease-in-out;
+transition: all .4s ease-in-out;
+}
+
+.actionModal:focus {
+outline: none;
+}
+
+.actionModal.bn19 {
+background-image: linear-gradient(
+    to right,
+    #fac636,
+    #e43603,
+    #e85a19
+);
+}
 /* The Close Button */
 .close {
 color: #aaaaaa;
-float: right;
+margin-left: 90%;
 font-size: 28px;
 font-weight: bold;
 }
@@ -177,10 +221,11 @@ cursor: pointer;
 }
 /* FOOTER */
 footer {
-    height: 15vh;
-    background: var(--bg-color);
+padding-top: 50px;
+height: 100px;
+background: var(--bg-color);
 }
 
 #add, #update {
-    display : none;
+display : none;
 }
