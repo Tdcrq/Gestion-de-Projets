@@ -1,5 +1,13 @@
 let currentClientsBtn = document.querySelector('.clients');
 let currentHebergBtn = document.querySelector('.heberg');
+let currentDashBtn = document.querySelector('.dashboard').addEventListener('click', () => {
+    document.cookie = "route=dash";
+    window.location.reload();
+})
+let currentProBtn = document.querySelector('.project').addEventListener('click', () => {
+    document.cookie = "route=project";
+    window.location.reload();
+})
 
 let modal = document.getElementById("myModal");
 let actionModalList = document.querySelectorAll('.actionModal');

@@ -65,18 +65,28 @@ use App\Class\FormTreatment\Update;
 
             <section class="right-section">
                 <?php 
-                $route = explode('/', $_COOKIE["route"]);
-                switch ($route[0]) {
-                    case 'Heberg':
-                        require("Container/Host/View.php");
-                        break;
-                    case 'Clients':
-                        require("Container/Customer/View.php");
-                        break;
-                    default:
-                        require("Container/Dashboard/index.php");
-                        break;
+                if(isset($_COOKIE["route"])){
+                    $route = explode('/', $_COOKIE["route"]);
+                    switch ($route[0]) {
+                        case 'dash':
+                            require("Container/Dashboard/index.php");
+                            break;
+                        case 'project':
+                            require("Container/Project/View.php");
+                            break;
+                        case 'Heberg':
+                            require("Container/Host/View.php");
+                            setcookie("routes", $route[1]);
+                            break;
+                        case 'Clients':
+                            require("Container/Customer/View.php");
+                            setcookie("routes", $route[1]);
+                            break;
+                    }
+                } else {
+                    require('Container/Dashboard/index.php');
                 }
+              
                 ?>
             </section>
         </main>
