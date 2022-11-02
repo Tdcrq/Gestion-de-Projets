@@ -21,7 +21,9 @@ window.onclick = function(event) {
 }
 
 actionModalList[0].addEventListener('click', () =>{
-    // document.getElementsById("add").style.display = hidden;
+    if(select.value === '') {
+        return
+    }
     document.getElementById("add").style.display = "none";
     document.getElementById("update").style.display = "block";
     document.cookie = "route=Clients/modify";
