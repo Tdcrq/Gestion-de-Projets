@@ -64,10 +64,6 @@ use App\Class\FormTreatment\Update;
             </section>
 
             <section class="right-section">
-                <?php
-                require("src/Require/right-section/upd_user.php");
-                require("src/Require/right-section/add_user.php");
-                ?>
             </section>
         </main>
         <div id="myModal" class="modal">
