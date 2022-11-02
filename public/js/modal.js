@@ -1,11 +1,11 @@
-let currentBtn = document.querySelector('.clients');
+let currentClientsBtn = document.querySelector('.clients');
+let currentHebergBtn = document.querySelector('.heberg');
 
 let modal = document.getElementById("myModal");
 let actionModalList = document.querySelectorAll('.actionModal');
 let spanModal = document.getElementsByClassName("close")[0];
 let select = document.getElementById('id_customer');
 
-console.log(modal.innerHTML);
 currentBtn.addEventListener('click', () => {
     modal.style.display = "block";
 });
