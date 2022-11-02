@@ -1,0 +1,10 @@
+{
+    "name": "composer/autoload",
+    "description": "autoloader",
+    "autoload": {
+        "psr-4": {
+            "Composer\\Autoload\\": "src/"
+        }
+    },
+    "require": {}
+}
