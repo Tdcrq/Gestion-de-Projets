@@ -1,10 +1,11 @@
 <?php
+
 namespace App\Class\FormTreatment;
 
 use App\Class\Customer;
 
-class Hydrate {
-
+class Hydrate
+{
     public static function addCustomer(array $data): Customer
     {
         $code = Trim($data[0]);

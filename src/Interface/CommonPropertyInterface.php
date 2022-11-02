@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Require\Interface;
 
 interface CommonPropertyInterface

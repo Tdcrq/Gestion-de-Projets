@@ -1,8 +1,9 @@
 <?php
+
 namespace App\Require\Trait;
 
-trait IdTrait {
-    
+trait IdTrait
+{
     private int $int;
 
     public function getId(): int

@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Class;
 
 use App\Require\Interface\CommonPropertyInterface;
@@ -9,12 +10,14 @@ use App\Require\Trait\NotesTrait;
 
 class Host implements CommonPropertyInterface
 {
-    use IdTrait, NameTrait, NotesTrait, CodeTrait;
+    use IdTrait;
+    use NameTrait;
+    use NotesTrait;
+    use CodeTrait;
     public function __construct(
-        private string $code, 
+        private string $code,
         private string $name,
         private string $notes
-    )
-    {
+    ) {
     }
 }

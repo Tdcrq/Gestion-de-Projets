@@ -1,11 +1,12 @@
 <?php
+
 namespace App\Class\FormTreatment;
 
 use App\Class\Customer;
 
-class Validator {
-
-    private static function inputSecurityFunction(string $data):string
+class Validator
+{
+    private static function inputSecurityFunction(string $data): string
     {
         $data = trim($data);
         $data = stripslashes($data);
@@ -21,28 +22,23 @@ class Validator {
         $notes = Validator::inputSecurityFunction($customerInValidation->getNotes());
         $isValid = true;
 
-        if(strlen($name) == 0 || strlen($name) > 255)
-        {
+        if (strlen($name) == 0 || strlen($name) > 255) {
             $isValid = false;
             $errorMsg = "Le nom doit contenir 1-255 caractère(s).\n";
         }
 
-        if(strlen($name) > 1000)
-        {
+        if (strlen($name) > 1000) {
             $isValid = false;
             $errorMsg = $errorMsg + "Notes doit contenir un maximum de 1000 caractère(s).\n";
         }
 
-        if($isValid == true)
-        {
+        if ($isValid == true) {
             return array(
                 $code,
                 $name,
                 $notes
             );
-        } 
-        else
-        {
+        } else {
             return array(
                 $isValid,
                 $errorMsg

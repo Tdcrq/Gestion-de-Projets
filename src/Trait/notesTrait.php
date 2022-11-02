@@ -1,9 +1,10 @@
 <?php
+
 namespace App\Require\Trait;
 
-trait NotesTrait {
-    
-    public function getNotes(): string 
+trait NotesTrait
+{
+    public function getNotes(): string
     {
         return $this->notes;
     }

@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 namespace App\Class;
 
 use App\Require\Interface\CommonPropertyInterface;
@@ -9,7 +10,10 @@ use App\Require\Trait\NotesTrait;
 
 class Project implements CommonPropertyInterface
 {
-    use IdTrait, NameTrait, NotesTrait, CodeTrait;
+    use IdTrait;
+    use NameTrait;
+    use NotesTrait;
+    use CodeTrait;
 
     public function __construct(
         private string $name,
@@ -20,45 +24,56 @@ class Project implements CommonPropertyInterface
         private string $notes,
         private Host $host,
         private Customer $customer
-    ){}
+    ) {
+    }
 
-    public function getLastPassFolder(): string{
+    public function getLastPassFolder(): string
+    {
         return $this->lastPassFolder;
     }
 
-    public function setLastPassFolder(string $lastPassFolder): void{
+    public function setLastPassFolder(string $lastPassFolder): void
+    {
         $this->lastPassFolder = $lastPassFolder;
     }
 
-    public function getLinkMockUps(): string{
+    public function getLinkMockUps(): string
+    {
         return $this->linkMockUps;
     }
 
-    public function setLinkMockUps(string $linkMockUps): void{
+    public function setLinkMockUps(string $linkMockUps): void
+    {
         $this->linkMockUps = $linkMockUps;
     }
 
-    public function getManagedServer(): int{
+    public function getManagedServer(): int
+    {
         return $this->managedServer;
     }
 
-    public function setManagedServer(int $managedServer): void{
+    public function setManagedServer(int $managedServer): void
+    {
         $this->managedServer = $managedServer;
     }
-    
-    public function getHost(): Host{
+
+    public function getHost(): Host
+    {
         return $this->host;
     }
 
-    public function setHost(Host $host): void{
+    public function setHost(Host $host): void
+    {
         $this->host = $host;
     }
 
-    public function getCustomer(): Customer{
+    public function getCustomer(): Customer
+    {
         return $this->customer;
     }
 
-    public function setCustomer(Customer $Customer): void{
+    public function setCustomer(Customer $Customer): void
+    {
         $this->Customer = $Customer;
     }
 }

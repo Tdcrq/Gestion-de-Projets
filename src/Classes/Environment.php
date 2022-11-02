@@ -1,27 +1,27 @@
 <?php
+
 namespace App\Class;
 
 use App\Require\Interface\EnvironmentInterface;
 use App\Require\Trait\IdTrait;
 
-class Environment implements EnvironmentInterface{
-    
+class Environment implements EnvironmentInterface
+{
     use IdTrait;
 
     public function __construct(
-        private string $name, 
-        private string $link, 
-        private string $ipAddress, 
-        private int $sshPort, 
-        private string $sshUsername, 
-        private string $phpMyAdminLink, 
-        private int $ipRestriction, 
+        private string $name,
+        private string $link,
+        private string $ipAddress,
+        private int $sshPort,
+        private string $sshUsername,
+        private string $phpMyAdminLink,
+        private int $ipRestriction,
         private project $project
-    )
-    {
+    ) {
     }
 
-    public function getId(): int 
+    public function getId(): int
     {
         return $this->id;
     }
