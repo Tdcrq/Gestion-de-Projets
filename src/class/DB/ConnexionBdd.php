@@ -9,8 +9,8 @@ class ConnexionBdd
     public function __construct(
         private string $server = "localhost",
         private string $user = "root",
-        private string $pass = "",
-        private string $dbName = "gestion_projects"
+        private string $pass = "root",
+        private string $dbName = "GestionProjets"
         )
     {
     }
