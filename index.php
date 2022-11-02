@@ -1,6 +1,7 @@
 <?php
 require(__DIR__."/vendor/autoload.php");
 
+
 use App\Class\Host;
 use App\Class\Contact;
 use App\Class\Customer;
@@ -12,49 +13,6 @@ use App\Class\FormTreatment\Validator;
 use App\Class\FormTreatment\Insert;
 use App\Class\FormTreatment\Update;
 
-
-<<<<<<< HEAD
-$query = $co->prepare('SELECT * from customer');
-$query->execute();
-$fetch_customer = $query->fetchAll();
-
-$error = "";
-
-if (isset($_POST["add"])) {
-    $data = array(
-        $_POST["name"],
-        $_POST["note"]
-    );
-    $customer = Hydrate::addCustomer($data);
-    $validator = Validator::inputVerificationFunction($customer);
-    if (gettype($validator[0]) === "string") {
-        Insert::Insert($co, $validator);
-    } else {
-        $error = $validator[1];
-    }
-}
-
-if (isset($_POST["update"])) {
-    $name = $_POST["name"];
-    $note = $_POST["note"];
-    $id = $_COOKIE["id_customer"];
-
-    $data = array(
-        $name,
-        $note
-    );
-
-    $customer = Hydrate::addCustomer($data);
-    $validator = Validator::inputVerificationFunction($customer);
-    if (gettype($validator[0]) === "string") {
-        Update::UpdateCustomer($co, $validator, $id);
-        header("Refresh:0");
-    } else {
-        $error = $validator[1];
-    }
-}
-=======
->>>>>>> 67ee876 (init / fix autoloader pour faire le front / JS)
 ?>
 
 <!DOCTYPE html>
@@ -106,14 +64,10 @@ if (isset($_POST["update"])) {
             </section>
 
             <section class="right-section">
-<<<<<<< HEAD
                 <?php
                 require("src/Require/right-section/upd_user.php");
-require("src/Require/right-section/add_user.php");
-?>
-=======
-             
->>>>>>> 67ee876 (init / fix autoloader pour faire le front / JS)
+                require("src/Require/right-section/add_user.php");
+                ?>
             </section>
         </main>
         <div id="myModal" class="modal">
@@ -125,10 +79,11 @@ require("src/Require/right-section/add_user.php");
                     <select class="add-user-input" type="text" id="id_customer" name="name" onchange="showCode(this.value), showName(this.value), showNotes(this.value)">
                         <option value=""></option>
                         <?php
-        foreach ($fetch_customer as $customer) {
-            echo "<option value='". $customer["id"] ."'>". $customer["name"] ."</option>";
-        }
-?>
+                        foreach ($fetch_customer as $customer)
+                        {
+                            echo "<option value='". $customer["id"] ."'>". $customer["name"] ."</option>";
+                        }
+                        ?>
                     </select>
                 </div>
                 <p class="actionModal bn19">Modifier</p>
