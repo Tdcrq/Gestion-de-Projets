@@ -57,6 +57,7 @@ actionModalList[0].addEventListener('click', () =>{
     document.cookie = "route="+oldCookie+"/modify";
     console.log(document.cookie);
     modal.style.display = "none";
+    window.location.reload();
 }) 
 actionModalList[1].addEventListener('click', () =>{
     // document.getElementsById("update").style.display = hidden;
@@ -64,4 +65,5 @@ actionModalList[1].addEventListener('click', () =>{
     document.cookie = "route="+oldCookie+"/add";
     console.log(document.cookie);
     modal.style.display = "none";
+    window.location.reload();
 }) 
