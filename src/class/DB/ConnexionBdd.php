@@ -12,8 +12,8 @@ class ConnexionBdd
         private string $pass = "",
         private string $dbName = "gestion_projects"
         )
-        {
-        }
+    {
+    }
 
     public function co()
     {
