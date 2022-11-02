@@ -1,5 +1,5 @@
 <?php
-require(__DIR__."/src/Require/autoloader.php");
+require(__DIR__."/vendor/autoload.php");
 
 use App\Class\Host;
 use App\Class\Contact;
@@ -12,9 +12,8 @@ use App\Class\FormTreatment\Validator;
 use App\Class\FormTreatment\Insert;
 use App\Class\FormTreatment\Update;
 
-$config = new ConnexionBdd();
-$co = $config->co();
 
+<<<<<<< HEAD
 $query = $co->prepare('SELECT * from customer');
 $query->execute();
 $fetch_customer = $query->fetchAll();
@@ -54,6 +53,8 @@ if (isset($_POST["update"])) {
         $error = $validator[1];
     }
 }
+=======
+>>>>>>> 67ee876 (init / fix autoloader pour faire le front / JS)
 ?>
 
 <!DOCTYPE html>
@@ -105,10 +106,14 @@ if (isset($_POST["update"])) {
             </section>
 
             <section class="right-section">
+<<<<<<< HEAD
                 <?php
                 require("src/Require/right-section/upd_user.php");
 require("src/Require/right-section/add_user.php");
 ?>
+=======
+             
+>>>>>>> 67ee876 (init / fix autoloader pour faire le front / JS)
             </section>
         </main>
         <div id="myModal" class="modal">

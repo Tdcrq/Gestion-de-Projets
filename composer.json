@@ -3,7 +3,7 @@
     "description": "autoloader",
     "autoload": {
         "psr-4": {
-            "Composer\\Autoload\\": "src/"
+            "App\\": "src/"
         }
     },
     "require": {}
