@@ -226,6 +226,3 @@ height: 100px;
 background: var(--bg-color);
 }
 
-#add, #update {
-display : none;
-}
