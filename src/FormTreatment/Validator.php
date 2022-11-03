@@ -3,6 +3,8 @@
 namespace App\FormTreatment;
 
 use App\Classes\Customer;
+use App\Classes\Project;
+use App\Classes\Host;
 
 class Validator
 {
