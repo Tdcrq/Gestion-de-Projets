@@ -10,7 +10,7 @@ class ConnexionBdd
         private string $server = "localhost",
         private string $user = "root",
         private string $pass = "root",
-        private string $dbName = "GestionProjets"
+        private string $dbName = "projetdeuxAnnee"
     ) {
     }
 

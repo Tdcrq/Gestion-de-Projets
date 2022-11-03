@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Require\Trait;
+namespace App\Trait;
 
 trait NotesTrait
 {

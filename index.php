@@ -2,16 +2,12 @@
 require(__DIR__."/vendor/autoload.php");
 
 
-use App\Class\Host;
-use App\Class\Contact;
-use App\Class\Customer;
-use App\Class\Environment;
-use App\Class\Project;
 use App\DB\ConnexionBdd;
-use App\Class\FormTreatment\Hydrate;
-use App\Class\FormTreatment\Validator;
-use App\Class\FormTreatment\Insert;
-use App\Class\FormTreatment\Update;
+use App\Classes\Customer;
+
+$config = new ConnexionBdd();
+$co = $config->co();
+
 
 ?>
 
