@@ -111,6 +111,12 @@ main {
     border-radius: 3%;
 }
 
+.input-checkbox{
+    margin-top: 1vh;
+    border-width: 2px;
+    border-color: var(--bg-color);
+    border-radius: 3%;
+}
 .add-user-textarea{
     height: 15vh;
 }
@@ -139,6 +145,15 @@ main {
     height: 3.5vh;
     width: fit-content;
     border-color: var(--main-color);
+}
+
+.flexRow{
+    display: flex;
+    flex-direction: row;
+}
+
+#dossierLPLabel , #lienMLabel{
+    margin-left: 30px;
 }
 /* The Modal (background) */
 .modal {
@@ -179,7 +194,7 @@ text-align:center;
 border: none;
 background-size: 300% 100%;
 border-radius: 50px;
-moz-transition: all .4s ease-in-out;
+/*moz-transition: all .4s ease-in-out;*/
 -o-transition: all .4s ease-in-out;
 -webkit-transition: all .4s ease-in-out;
 transition: all .4s ease-in-out;
@@ -187,7 +202,7 @@ transition: all .4s ease-in-out;
 
 .actionModal:hover {
 background-position: 100% 0;
-moz-transition: all .4s ease-in-out;
+/*moz-transition: all .4s ease-in-out;*/
 -o-transition: all .4s ease-in-out;
 -webkit-transition: all .4s ease-in-out;
 transition: all .4s ease-in-out;
@@ -225,4 +240,3 @@ padding-top: 50px;
 height: 100px;
 background: var(--bg-color);
 }
-
