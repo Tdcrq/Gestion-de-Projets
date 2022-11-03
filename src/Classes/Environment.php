@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Class;
+namespace App\Classes;
 
-use App\Require\Interface\EnvironmentInterface;
-use App\Require\Trait\IdTrait;
+use App\Interface\EnvironmentInterface;
+use App\Trait\IdTrait;
 
 class Environment implements EnvironmentInterface
 {

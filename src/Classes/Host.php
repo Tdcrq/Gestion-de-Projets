@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Class;
+namespace App\Classes;
 
-use App\Require\Interface\CommonPropertyInterface;
-use App\Require\Trait\CodeTrait;
-use App\Require\Trait\NameTrait;
-use App\Require\Trait\IdTrait;
-use App\Require\Trait\NotesTrait;
+use App\Interface\CommonPropertyInterface;
+use App\Trait\CodeTrait;
+use App\Trait\NameTrait;
+use App\Trait\IdTrait;
+use App\Trait\NotesTrait;
 
 class Host implements CommonPropertyInterface
 {

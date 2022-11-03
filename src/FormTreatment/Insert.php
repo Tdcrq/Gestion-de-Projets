@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Class\FormTreatment;
+namespace App\FormTreatment;
 
-use App\Class\DB\ConnexionBdd;
 use FFI\Exception;
 use PDO;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\require\Interface;
+namespace App\Interface;
 
 interface EnvironmentInterface
 {

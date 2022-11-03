@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Class\FormTreatment;
+namespace App\FormTreatment;
 
-use App\Class\Customer;
+use App\Classes\Customer;
 
 class Validator
 {

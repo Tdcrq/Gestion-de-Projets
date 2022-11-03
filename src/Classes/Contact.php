@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Class;
+namespace App\Classes;
 
-use App\Require\Trait\IdTrait;
+use App\Trait\IdTrait;
 
 class Contact
 {
