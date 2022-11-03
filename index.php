@@ -72,11 +72,9 @@ $co = $config->co();
                             break;
                         case 'Heberg':
                             require("Container/Host/View.php");
-                            setcookie("routes", $route[1]);
                             break;
                         case 'Clients':
                             require("Container/Customer/View.php");
-                            setcookie("routes", $route[1]);
                             break;
                     }
                 } else {
