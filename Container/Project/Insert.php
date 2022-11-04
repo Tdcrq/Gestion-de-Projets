@@ -36,8 +36,7 @@
                     <?php
                     $query = $co->prepare('SELECT * FROM customer');
                     $query->execute();
-                    while($row = $query->fetch())
-                    {
+                    while ($row = $query->fetch()) {
                         echo "<option value='".$row['0']."'>".$row['2']."</option>";
                     }
                     ?>
@@ -50,8 +49,7 @@
                     <?php
                     $query = $co->prepare('SELECT * FROM host');
                     $query->execute();
-                    while($row = $query->fetch())
-                    {
+                    while ($row = $query->fetch()) {
                         echo "<option value='".$row['0']."'>".$row['2']."</option>";
                     }
                     ?>

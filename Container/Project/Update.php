@@ -41,51 +41,49 @@ $row = $query->fetch();
                 <select name="client" id="client" class="add-user-input" value="<?php echo $row[8];?>">
                     <?php
                     $query2 = $co->prepare('SELECT * FROM customer where id = :id');
-                    $query2->bindParam(":id", $idProject);
-                    $query2->execute();
+$query2->bindParam(":id", $idProject);
+$query2->execute();
 
-                    $row2 = $query2->fetch();
-                    echo "<option value='".$row2['0']."'>".$row2['2']."</option>";
+$row2 = $query2->fetch();
+echo "<option value='".$row2['0']."'>".$row2['2']."</option>";
 
-                    $query3 = $co->prepare('SELECT * FROM customer where id <> :id');
-                    $query3->bindParam(":id", $idProject);
-                    $query3->execute();
-                    while($row3 = $query3->fetch())
-                    {
-                        echo "<option value='".$row3['0']."'>".$row3['2']."</option>";
-                    }
-                    ?>
+$query3 = $co->prepare('SELECT * FROM customer where id <> :id');
+$query3->bindParam(":id", $idProject);
+$query3->execute();
+while ($row3 = $query3->fetch()) {
+    echo "<option value='".$row3['0']."'>".$row3['2']."</option>";
+}
+?>
                 </select>
             </div>
             <div>
                 <label class="add-user-label" for="hebergeur">Hébergeur <span style="color:red;">*</span></label>
                 <select name="hebergeur" id="hebergeur" class="add-user-input">
                     <?php
-                    $query2 = $co->prepare('SELECT * FROM host where id = :id');
-                    $query2->bindParam(":id", $idProject);
-                    $query2->execute();
+$query2 = $co->prepare('SELECT * FROM host where id = :id');
+$query2->bindParam(":id", $idProject);
+$query2->execute();
 
-                    $row2 = $query2->fetch();
-                    echo "<option value='".$row2['0']."'>".$row2['2']."</option>";
+$row2 = $query2->fetch();
+echo "<option value='".$row2['0']."'>".$row2['2']."</option>";
 
-                    $query3 = $co->prepare('SELECT * FROM customer where id <> :id');
-                    $query3->bindParam(":id", $idProject);
-                    $query3->execute();
-                    while($row3 = $query3->fetch())
-                    {
-                        echo "<option value='".$row3['0']."'>".$row3['2']."</option>";
-                    }
-                    ?>
+$query3 = $co->prepare('SELECT * FROM customer where id <> :id');
+$query3->bindParam(":id", $idProject);
+$query3->execute();
+while ($row3 = $query3->fetch()) {
+    echo "<option value='".$row3['0']."'>".$row3['2']."</option>";
+}
+?>
                 </select>
             </div>
             <div>
                 <label class="add-user-label" for="serveurInfo">Serveur Infogéré</label>
                 <input type="checkbox" id="serveurInfo" name="serveurInfo" class="input-checkbox" 
-                <?php 
-                if($row['5'] == 1){
+                <?php
+                if ($row['5'] == 1) {
                     echo "checked";
                 }
-                ?>
+?>
 
             </div>
             <div>
