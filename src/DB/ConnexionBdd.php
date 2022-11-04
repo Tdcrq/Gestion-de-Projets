@@ -1,4 +1,5 @@
 <?php
+
 namespace App\DB;
 
 use PDO;

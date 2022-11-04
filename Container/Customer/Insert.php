@@ -9,7 +9,7 @@
         <div>
             <form class="add-user-form" method="post">
                 <div>
-                    <p class="error"><?php //echo $error; ?></p>
+                    <p class="error"><?php //echo $error;?></p>
                     <label class="add-user-label" for="name">Nom</label>
                     <input class="add-user-input" type="text" id="name" name="name">
                 </div>

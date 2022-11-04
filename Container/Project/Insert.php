@@ -32,13 +32,27 @@
             <div>
                 <label class="add-user-label" for="client">client <span style="color:red;">*</span></label>
                 <select name="client" id="client" class="add-user-input">
-                    <option value="">--Please choose an option--</option>
+                    <option value="">--list des clients--</option>
+                    <?php
+                    $query = $co->prepare('SELECT * FROM customer');
+                    $query->execute();
+                    while ($row = $query->fetch()) {
+                        echo "<option value='".$row['0']."'>".$row['2']."</option>";
+                    }
+                    ?>
                 </select>
             </div>
             <div>
                 <label class="add-user-label" for="hebergeur">Hébergeur <span style="color:red;">*</span></label>
                 <select name="hebergeur" id="hebergeur" class="add-user-input">
-                    <option value="">--Please choose an option--</option>
+                    <option value="">--list des hébergeur--</option>
+                    <?php
+                    $query = $co->prepare('SELECT * FROM host');
+                    $query->execute();
+                    while ($row = $query->fetch()) {
+                        echo "<option value='".$row['0']."'>".$row['2']."</option>";
+                    }
+                    ?>
                 </select>
             </div>
             <div>

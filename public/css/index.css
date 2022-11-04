@@ -48,6 +48,10 @@ main {
     padding: 1em 0 1em 1.5em;
 }
 
+.layout:hover {
+    cursor: pointer;
+}
+
 .layout i {
     margin-right: 3px;
 }
@@ -150,6 +154,21 @@ main {
 .flexRow{
     display: flex;
     flex-direction: row;
+}
+
+.table{
+    width: 100%;
+    padding: 15px;
+}
+
+.th{
+    background-color:var(--grey);
+    color: var(--white);
+}
+
+.td{
+    background-color: var(--grey-tbl);
+    padding: 5px;
 }
 
 #dossierLPLabel , #lienMLabel{

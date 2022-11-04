@@ -59,8 +59,8 @@ $co = $config->co();
             </section>
 
             <section class="right-section">
-                <?php 
-                if(isset($_COOKIE["route"])){
+                <?php
+                if (isset($_COOKIE["route"])) {
                     $route = explode('/', $_COOKIE["route"]);
                     switch ($route[0]) {
                         case 'dash':
@@ -91,11 +91,10 @@ $co = $config->co();
                     <select class="add-user-input" type="text" id="id_customer" name="name" onchange="showCode(this.value), showName(this.value), showNotes(this.value)">
                         <option value=""></option>
                         <?php
-                        foreach ($fetch_customer as $customer)
-                        {
-                            echo "<option value='". $customer["id"] ."'>". $customer["name"] ."</option>";
-                        }
-                        ?>
+        foreach ($fetch_customer as $customer) {
+            echo "<option value='". $customer["id"] ."'>". $customer["name"] ."</option>";
+        }
+?>
                     </select>
                 </div>
                 <p class="actionModal bn19">Modifier</p>
@@ -106,6 +105,7 @@ $co = $config->co();
 
     <script src="public/js/modal.js"></script>
     <script src="public/js/check_cookie.js"></script>
+    <script src="public/js/cookie_project.js"></script>
 
     <footer>
     </footer>

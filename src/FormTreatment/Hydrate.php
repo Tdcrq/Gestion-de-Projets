@@ -9,7 +9,8 @@ use App\DB\ConnexionBdd;
 
 class Hydrate
 {
-    public static function treatmentCodeName(string $n): array {
+    public static function treatmentCodeName(string $n): array
+    {
         $code = $name = Trim($n);
         $code = strtoupper(str_replace(" ", "_", $code));
         $code = preg_replace("/_+/", "_", $code);
@@ -22,7 +23,8 @@ class Hydrate
         return new Customer($temp["code"], $temp["name"], $data["notes"]);
     }
 
-    public static function hydrateHost(array $data): Host{
+    public static function hydrateHost(array $data): Host
+    {
         $temp = Hydrate::treatmentCodeName($data["name"]);
         return new Host($temp["code"], $temp["name"], $data["notes"]);
     }
@@ -59,6 +61,6 @@ class Hydrate
         // !--------------------!    FIN ESSAIE      !---------------------!//
 
         $temp = Hydrate::treatmentCodeName($data["name"]);
-        return new Project($temp["name"], $temp["code"], $data("lastPF"), $data["linkM"], $data["managedServer"], $data["notes"], new Host("","",""), new Customer("","",""));
+        return new Project($temp["name"], $temp["code"], $data("lastPF"), $data["linkM"], $data["managedServer"], $data["notes"], new Host("", "", ""), new Customer("", "", ""));
     }
 }
