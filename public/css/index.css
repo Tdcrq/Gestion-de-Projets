@@ -152,6 +152,21 @@ main {
     flex-direction: row;
 }
 
+.table{
+    width: 100%;
+    padding: 15px;
+}
+
+.th{
+    background-color:var(--grey);
+    color: var(--white);
+}
+
+.td{
+    background-color: var(--grey-tbl);
+    padding: 5px;
+}
+
 #dossierLPLabel , #lienMLabel{
     margin-left: 30px;
 }
