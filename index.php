@@ -108,6 +108,7 @@ $co = $config->co();
 
     <script src="public/js/modal.js"></script>
     <script src="public/js/check_cookie.js"></script>
+    <script src="public/js/cookie_project.js"></script>
 
     <footer>
     </footer>
