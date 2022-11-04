@@ -48,6 +48,10 @@ main {
     padding: 1em 0 1em 1.5em;
 }
 
+.layout:hover {
+    cursor: pointer;
+}
+
 .layout i {
     margin-right: 3px;
 }

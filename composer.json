@@ -6,5 +6,8 @@
             "App\\": "src"
         }
     },
-    "require": {}
+    "require": {
+        "egulias/email-validator": "^3.2",
+        "tecnickcom/tcpdf": "^6.2.13"
+    }
 }
