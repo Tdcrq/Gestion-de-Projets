@@ -5,7 +5,7 @@ let currentDashBtn = document.querySelector('.dashboard').addEventListener('clic
     window.location.reload();
 })
 let currentProBtn = document.querySelector('.project').addEventListener('click', () => {
-    document.cookie = "route=project";
+    document.cookie = "route=project/view";
     window.location.reload();
 })
 

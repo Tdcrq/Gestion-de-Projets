@@ -8,7 +8,6 @@ use App\Classes\Customer;
 $config = new ConnexionBdd();
 $co = $config->co();
 
-
 ?>
 
 <!DOCTYPE html>
@@ -80,7 +79,6 @@ $co = $config->co();
                 } else {
                     require('Container/Dashboard/index.php');
                 }
-              
                 ?>
             </section>
         </main>
