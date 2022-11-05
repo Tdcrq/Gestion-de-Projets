@@ -9,14 +9,18 @@ let currentProBtn = document.querySelector('.project').addEventListener('click',
     window.location.reload();
 })
 
-let modal = document.getElementById("myModal");
+let cliModal = document.getElementById("cliModal");
+let heModal = document.getElementById('heModal');
 let actionModalList = document.querySelectorAll('.actionModal');
-let spanModal = document.getElementsByClassName("close")[0];
 let select = document.getElementById('id_customer');
 
 function modalView(_routes) {
-    modal.style.display = "block";
-    document.cookie = "route="+_routes;
+    if(_routes == 'Clients') {
+        cliModal.style.display = "block";
+    } else if (_routes == 'Heberg'){
+        heModal.style.display = "block";
+    }
+    document.cookie = "route=" + _routes;
 }
 
 function getCookie(cname) {
@@ -46,13 +50,19 @@ currentHebergBtn.addEventListener('click', () => {
 
 
 
-spanModal.onclick = function() {
-    modal.style.display = "none";
+document.getElementsByClassName("close")[0].onclick = function() {
+    cliModal.style.display = "none";
+}
+document.getElementsByClassName("close")[1].onclick = function() {
+    heModal.style.display = "none";
 }
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+    if (event.target == cliModal) {
+        cliModal.style.display = "none";
+    }
+    if (event.target == heModal) {
+        heModal.style.display = "none";
     }
 }
 
@@ -64,7 +74,7 @@ actionModalList[0].addEventListener('click', () =>{
     let oldCookie = getCookie("route");
     document.cookie = "route="+oldCookie+"/modify";
     console.log(document.cookie);
-    modal.style.display = "none";
+    cliModal.style.display = "none";
     window.location.reload();
 }) 
 actionModalList[1].addEventListener('click', () =>{
@@ -72,6 +82,6 @@ actionModalList[1].addEventListener('click', () =>{
     let oldCookie = getCookie("route");
     document.cookie = "route="+oldCookie+"/add";
     console.log(document.cookie);
-    modal.style.display = "none";
+    cliModal.style.display = "none";
     window.location.reload();
 }) 
