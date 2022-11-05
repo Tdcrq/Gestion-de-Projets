@@ -1,9 +1,9 @@
 <?php
 var_dump($route);
 if ($route[1] === "Insert") {
-    require("Container/Host/Insert.php");
+    require("Container/Project/Insert.php");
 } elseif ($route[1] === "Update") {
-    require("Container/Host/Update.php");
+    require("Container/Project/Update.php");
 }elseif ($route[1] === "view") { ?>
 <div>
     <h1 class="title-right-section">Projets</h1>
