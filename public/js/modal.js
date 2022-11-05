@@ -65,11 +65,10 @@ window.onclick = function(event) {
         heModal.style.display = "none";
     }
 }
-
 actionModalList[0].addEventListener('click', () =>{
-    /*if(select.value === '') {
+    if(select.value === '') {
         return
-    }*/
+    }
     document.cookie = "id=" + select.options[select.selectedIndex].value;
     let oldCookie = getCookie("route");
     document.cookie = "route="+oldCookie+"/modify";
@@ -78,6 +77,25 @@ actionModalList[0].addEventListener('click', () =>{
     window.location.reload();
 }) 
 actionModalList[1].addEventListener('click', () =>{
+    // document.getElementsById("update").style.display = hidden;
+    let oldCookie = getCookie("route");
+    document.cookie = "route="+oldCookie+"/add";
+    console.log(document.cookie);
+    cliModal.style.display = "none";
+    window.location.reload();
+}) 
+actionModalList[2].addEventListener('click', () =>{
+    if(select.value === '') {
+        return
+    }
+    document.cookie = "id=" + select.options[select.selectedIndex].value;
+    let oldCookie = getCookie("route");
+    document.cookie = "route="+oldCookie+"/modify";
+    console.log(document.cookie);
+    cliModal.style.display = "none";
+    window.location.reload();
+}) 
+actionModalList[3].addEventListener('click', () =>{
     // document.getElementsById("update").style.display = hidden;
     let oldCookie = getCookie("route");
     document.cookie = "route="+oldCookie+"/add";
