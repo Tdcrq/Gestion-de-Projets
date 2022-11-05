@@ -74,6 +74,7 @@ actionModalList[0].addEventListener('click', () =>{
     document.cookie = "route="+oldCookie+"/modify";
     console.log(document.cookie);
     cliModal.style.display = "none";
+    location.assign("?id=" + select.value); 
 }) 
 actionModalList[1].addEventListener('click', () =>{
     // document.getElementsById("update").style.display = hidden;
