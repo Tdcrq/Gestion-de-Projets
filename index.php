@@ -25,13 +25,6 @@ try {
 } catch (Error $e) {
     echo "error";
 }
-
-function SetCookieLive($name, $value, $expire = 0, $path = '', $domain='', $secure=false, $httponly=false)
-{
-    $_COOKIE[$name] = $value ;
-    return setcookie($name, $value, $expire, $path, $domain, $secure, $httponly);
-}
-
 ?>
 
 <!DOCTYPE html>
