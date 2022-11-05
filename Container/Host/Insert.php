@@ -4,6 +4,7 @@ use App\FormTreatment\Hydrate;
 use App\FormTreatment\Validator;
 use App\FormTreatment\Insert;
 
+$error ="";
 if (isset($_POST["add"])) {
     $notes = $_POST["notes"];
     $name = $_POST["name"];
