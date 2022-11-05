@@ -2,17 +2,18 @@ let currentClientsBtn = document.querySelector('.clients');
 let currentHebergBtn = document.querySelector('.heberg');
 let currentDashBtn = document.querySelector('.dashboard').addEventListener('click', () => {
     document.cookie = "route=dash";
-    window.location.reload();
+    location.replace('./');
 })
 let currentProBtn = document.querySelector('.project').addEventListener('click', () => {
     document.cookie = "route=project/view";
-    window.location.reload();
+    location.replace('./');
 })
 
 let cliModal = document.getElementById("cliModal");
 let heModal = document.getElementById('heModal');
 let actionModalList = document.querySelectorAll('.actionModal');
 let select = document.getElementById('id_customer');
+let selectH = document.getElementById('id_host');
 
 function modalView(_routes) {
     if(_routes == 'Clients') {
@@ -69,12 +70,10 @@ actionModalList[0].addEventListener('click', () =>{
     if(select.value === '') {
         return
     }
-    document.cookie = "id=" + select.options[select.selectedIndex].value;
     let oldCookie = getCookie("route");
     document.cookie = "route="+oldCookie+"/modify";
     console.log(document.cookie);
     cliModal.style.display = "none";
-    window.location.reload();
 }) 
 actionModalList[1].addEventListener('click', () =>{
     // document.getElementsById("update").style.display = hidden;
@@ -85,15 +84,14 @@ actionModalList[1].addEventListener('click', () =>{
     window.location.reload();
 }) 
 actionModalList[2].addEventListener('click', () =>{
-    if(select.value === '') {
+    if(selectH.value === '') {
         return
     }
-    document.cookie = "id=" + select.options[select.selectedIndex].value;
     let oldCookie = getCookie("route");
     document.cookie = "route="+oldCookie+"/modify";
     console.log(document.cookie);
-    cliModal.style.display = "none";
-    window.location.reload();
+    heModal.style.display = "none";
+    location.assign("?id=" + selectH.value); 
 }) 
 actionModalList[3].addEventListener('click', () =>{
     // document.getElementsById("update").style.display = hidden;

@@ -45,8 +45,8 @@ if (isset($_POST["add"])) {
                     <input class="add-user-input" type="text" id="code" name="code" placeholder="Champ généré automatiquement" disabled>
                 </div>
                 <div>
-                    <label class="add-user-label" for="notes">Notes / Remarques</label>
-                    <textarea class="add-user-textarea add-user-input" id="notes" name="notes"></textarea>    
+                    <label class="add-user-label" for="name">Notes / Remarques</label>
+                    <textarea class="add-user-textarea add-user-input"id="note" name="note"></textarea>    
                 </div>
                 <div class="btn-form-bottom">
                     <input id="btn-cancel" type="submit" value="Annuler">
