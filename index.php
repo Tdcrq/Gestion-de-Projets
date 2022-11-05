@@ -8,6 +8,23 @@ use App\Classes\Customer;
 $config = new ConnexionBdd();
 $co = $config->co();
 
+// TEST //
+use App\FormTreatment\Hydrate;
+
+try {
+    $test = Hydrate::hydrateProject([
+        "name" => "name_project",
+        "code" => "code_project",
+        "lastPF" => "lestPF",
+        "linkM" => "linkM",
+        "managedServer" => "managedServer",
+        "notes" => "notes_project",
+        "id_customer" => "1",
+        "id_host" => "1"
+    ]);
+} catch (Error $e) {
+    echo "error";
+}
 
 ?>
 
