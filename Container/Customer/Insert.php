@@ -16,7 +16,7 @@ if (isset($_POST["add"])) {
     if ($verifCustomer[0] == false) {
         $error = $verifCustomer[1];
     } else {
-        Insert::InsertHost($verifCustomer);
+        Insert::InsertCustomer($verifCustomer);
     }
 }
 ?>
