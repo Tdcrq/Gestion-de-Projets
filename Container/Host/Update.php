@@ -1,3 +1,37 @@
+<?php
+
+use App\FormTreatment\Hydrate;
+use App\FormTreatment\Validator;
+use App\FormTreatment\Update;
+
+$id_host = $_GET["id"];
+
+$query = $co->prepare("SELECT * FROM host WHERE id = ?");
+$query->execute([$id_host]);
+$thehost = $query->fetchAll();
+
+foreach ($thehost as $host) {
+    $current_name = $host["name"];
+    $current_code = $host["code"];
+    $current_notes = $host["notes"];
+}
+
+if (isset($_POST["update"])) {
+    $notes = $_POST["notes"];
+    $name = $_POST["name"];
+    $data = [
+        "notes" => $notes,
+        "name" => $name];
+    $host = Hydrate::hydrateHost($data);
+    $verifHost = Validator::inputVerificationFunction(null, $host);
+    if ($verifHost[0] == false) {
+        $error = $verifHost[1];
+    } else {
+        Update::UpdateHost($verifHost, $id_host);
+    }
+}
+?>
+
 <div id="update">
     <h1 class="title-right-section" id="old_name"></h1>
 

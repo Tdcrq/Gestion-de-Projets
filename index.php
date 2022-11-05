@@ -84,7 +84,7 @@ $co = $config->co();
                 <span class="close">&times;</span>
                 <div>
                     <label class="add-user-label" for="id_customer">Nom</label>
-                    <select class="add-user-input" type="text" id="id_customer" name="name" onchange="showCode(this.value), showName(this.value), showNotes(this.value)">
+                    <select class="add-user-input" type="text" id="id_customer" name="name">
                         <option value=""></option>
                         <?php
                         $query = $co->prepare('SELECT * from customer');
@@ -106,7 +106,7 @@ $co = $config->co();
                 <span class="close">&times;</span>
                 <div>
                     <label class="add-user-label" for="id_customer">Hébergeur</label>
-                    <select class="add-user-input" type="text" id="id_customer" name="name" onchange="showCode(this.value), showName(this.value), showNotes(this.value)">
+                    <select class="add-user-input" type="text" id="id_customer" name="name">
                         <option value=""></option>
                         <?php
                         $query = $co->prepare('SELECT * from host');
