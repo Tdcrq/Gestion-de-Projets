@@ -1,22 +1,22 @@
 <?php
 
-use App\Classes\Host;
 use App\FormTreatment\Hydrate;
+use App\FormTreatment\Validator;
+use App\FormTreatment\Insert;
 
 if (isset($_POST["add"])) {
     $notes = $_POST["notes"];
     $name = $_POST["name"];
     $data = [
-        "id_cutomer" => 1,
         "notes" => $notes,
         "name" => $name];
     $host = Hydrate::hydrateHost($data);
-
-    // var_dump($data);
-    // echo "<br><br>";
-
-    // $data += ["DUMP_DATA" => $host];
-    // var_dump($data["DUMP_DATA"]);
+    $verifHost = Validator::inputVerificationFunction(null, $host);
+    if ($verifHost[0] == false) {
+        $error = $verifHost[1];
+    } else {
+        Insert::InsertHost($verifHost);
+    }
 }
 ?>
 
@@ -30,6 +30,11 @@ if (isset($_POST["add"])) {
     <div class="right-contents">
         <div>
             <form class="add-user-form" method="post">
+                <p class="error">
+                    <?php
+                    echo $error;
+                    ?>
+                </p>
                 <div>
                     <label class="add-user-label" for="name">Nom</label>
                     <input class="add-user-input" type="text" id="name" name="name">

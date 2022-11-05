@@ -17,12 +17,22 @@ class Validator
         return $data;
     }
 
-    public static function inputVerificationFunction(Customer $customerInValidation): array
+    public static function inputVerificationFunction(?Customer $customerInValidation, ?Host $hostInValidation): array
     {
-        $code  = Validator::inputSecurityFunction($customerInValidation->getCode());
-        $name  = Validator::inputSecurityFunction($customerInValidation->getName());
-        $notes = Validator::inputSecurityFunction($customerInValidation->getNotes());
         $isValid = true;
+        if ($customerInValidation != null) {
+            $objectInValidation = $customerInValidation;
+        } elseif ($hostInValidation != false) {
+            $objectInValidation = $hostInValidation;
+        } else {
+            return array(
+                false,
+                "Erreur servre lors de l'envoie du formulaire"
+            );
+        }
+        $code  = Validator::inputSecurityFunction($objectInValidation->getCode());
+        $name  = Validator::inputSecurityFunction($objectInValidation->getName());
+        $notes = Validator::inputSecurityFunction($objectInValidation->getNotes());
 
         if (strlen($name) == 0 || strlen($name) > 255) {
             $isValid = false;
