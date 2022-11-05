@@ -26,6 +26,12 @@ try {
     echo "error";
 }
 
+function SetCookieLive($name, $value, $expire = 0, $path = '', $domain='', $secure=false, $httponly=false)
+{
+    $_COOKIE[$name] = $value ;
+    return setcookie($name, $value, $expire, $path, $domain, $secure, $httponly);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -100,7 +106,7 @@ try {
                 ?>
             </section>
         </main>
-        <div id="myModal" class="modal">
+        <div id="cliModal" class="modal">
             <!-- Modal content -->
             <div class="modal-content">
                 <span class="close">&times;</span>
@@ -109,23 +115,36 @@ try {
                     <select class="add-user-input" type="text" id="id_customer" name="name" onchange="showCode(this.value), showName(this.value), showNotes(this.value)">
                         <option value=""></option>
                         <?php
-                        $query = ''; 
-                        if($route[0] == 'Heberg')
-                        {
-                            $query = $co->prepare('SELECT * from host');
-                        } elseif ($route[0] == 'Clients'){
-                            $query = $co->prepare('SELECT * from customer');
-                            
-                        }
+                        $query = $co->prepare('SELECT * from customer');
                         $query->execute();
-                   
                         $fetch_customer = $query->fetchAll();
                         foreach ($fetch_customer as $customer) {
                         echo "<option value='". $customer["id"] ."'>". $customer["name"] ."</option>";
                         }
                         ?>
                     </select>
-                    <?php var_dump($route[0]); ?>
+                </div>
+                <p class="actionModal bn19">Modifier</p>
+                <p class="actionModal bn19">Ajouter</p>
+            </div>
+        </div>
+        <div id="heModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div>
+                    <label class="add-user-label" for="id_customer">Hébergeur</label>
+                    <select class="add-user-input" type="text" id="id_customer" name="name" onchange="showCode(this.value), showName(this.value), showNotes(this.value)">
+                        <option value=""></option>
+                        <?php
+                        $query = $co->prepare('SELECT * from host');
+                        $query->execute();
+                        $fetch_host = $query->fetchAll();
+                        foreach ($fetch_host as $host) {
+                        echo "<option value='". $host["id"] ."'>". $host["name"] ."</option>";
+                        }
+                        ?>
+                    </select>
                 </div>
                 <p class="actionModal bn19">Modifier</p>
                 <p class="actionModal bn19">Ajouter</p>
