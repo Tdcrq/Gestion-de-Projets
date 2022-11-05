@@ -1,3 +1,25 @@
+<?php
+
+use App\FormTreatment\Hydrate;
+use App\FormTreatment\Validator;
+use App\FormTreatment\Insert;
+
+$error ="";
+if (isset($_POST["add"])) {
+    $notes = $_POST["notes"];
+    $name = $_POST["name"];
+    $data = [
+        "notes" => $notes,
+        "name" => $name];
+    $customer = Hydrate::hydrateCustomer($data);
+    $verifCustomer = Validator::inputVerificationFunction($customer, null);
+    if ($verifCustomer[0] == false) {
+        $error = $verifCustomer[1];
+    } else {
+        Insert::InsertHost($verifCustomer);
+    }
+}
+?>
 <div id="add">
     <h1 class="title-right-section">Nouveau client</h1>
 
@@ -8,6 +30,11 @@
     <div class="right-contents">
         <div>
             <form class="add-user-form" method="post">
+                <p class="error">
+                    <?php
+                    echo $error;
+                    ?>
+                </p>
                 <div>
                     <p class="error"><?php //echo $error;?></p>
                     <label class="add-user-label" for="name">Nom</label>
