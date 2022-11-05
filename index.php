@@ -21,8 +21,6 @@ $co = $config->co();
         <link rel="stylesheet" href="public/css/index.css">
         <!-- JS -->
         <script src="public/js/getData/getCode.js"></script>
-        <script src="public/js/getData/getName.js"></script>
-        <script src="public/js/getData/getNotes.js"></script>
     </head>
 
     <body>
@@ -127,7 +125,6 @@ $co = $config->co();
     </body>
 
     <script src="public/js/modal.js"></script>
-    <script src="public/js/check_cookie.js"></script>
     <script src="public/js/cookie_project.js"></script>
 
     <footer>
