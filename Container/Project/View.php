@@ -1,10 +1,10 @@
 <?php
-if ($route[1] === "Insert") {
-    require("Container/Project/Insert.php");
-} elseif ($route[1] === "Update") {
-    require("Container/Project/Update.php");
-} elseif ($route[1] === "view") {
-    ?>
+var_dump($route);
+if ($route[1] === "add") {
+    require("Container/Host/Insert.php");
+} elseif ($route[1] === "modify") {
+    require("Container/Host/Update.php");
+}elseif ($route[1] === "view") { ?>
 <div>
     <h1 class="title-right-section">Projets</h1>
     <div class="right-contents">
@@ -45,6 +45,6 @@ if ($route[1] === "Insert") {
         </div>
     </div>
 </div>
+
 <?php
-}
-?>
+} ?>

@@ -97,8 +97,7 @@ try {
                 } else {
                     require('Container/Dashboard/index.php');
                 }
-
-?>
+                ?>
             </section>
         </main>
         <div id="myModal" class="modal">

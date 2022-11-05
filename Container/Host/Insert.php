@@ -1,13 +1,22 @@
 <?php
 
 use App\Classes\Host;
+use App\FormTreatment\Hydrate;
 
 if (isset($_POST["add"])) {
     $notes = $_POST["notes"];
     $name = $_POST["name"];
-    $date = [
+    $data = [
+        "id_cutomer" => 1,
         "notes" => $notes,
         "name" => $name];
+    $host = Hydrate::hydrateHost($data);
+
+    // var_dump($data);
+    // echo "<br><br>";
+
+    // $data += ["DUMP_DATA" => $host];
+    // var_dump($data["DUMP_DATA"]);
 }
 ?>
 
@@ -31,7 +40,7 @@ if (isset($_POST["add"])) {
                 </div>
                 <div>
                     <label class="add-user-label" for="notes">Notes / Remarques</label>
-                    <textarea class="add-user-textarea add-user-input" id="notes" name="note"></textarea>    
+                    <textarea class="add-user-textarea add-user-input" id="notes" name="notes"></textarea>    
                 </div>
                 <div class="btn-form-bottom">
                     <input id="btn-cancel" type="submit" value="Annuler">

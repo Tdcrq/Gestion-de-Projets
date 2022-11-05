@@ -14,6 +14,7 @@ class Hydrate
     {
         $code = $name = Trim($n);
         $code = strtoupper(str_replace(" ", "_", $code));
+        $code = preg_replace("/_+/", "_", $code);
         return ["code" => $code, "name" => $name];
     }
 
