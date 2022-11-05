@@ -105,8 +105,8 @@ $co = $config->co();
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <div>
-                    <label class="add-user-label" for="id_customer">Hébergeur</label>
-                    <select class="add-user-input" type="text" id="id_customer" name="name">
+                    <label class="add-user-label" for="id_host">Hébergeur</label>
+                    <select class="add-user-input" type="text" id="id_host" name="name">
                         <option value=""></option>
                         <?php
                         $query = $co->prepare('SELECT * from host');
