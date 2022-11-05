@@ -56,17 +56,10 @@ class Hydrate
             ];
             $host = Hydrate::hydrateHost($host);
         }
+        var_dump($customer);
+        echo "<br><br>";
         var_dump($host);
         $temp = Hydrate::treatmentCodeName($data["name"]);
-        return new Project(
-            $temp["name"], 
-            $temp["code"], 
-            $data("lastPF"), 
-            $data["linkM"], 
-            $data["managedServer"], 
-            $data["notes"],
-            $host,
-            $customer
-        );
+        return new Project($temp["name"], $temp["code"], $data["lastPF"],$data["linkM"], $data["managedServer"], $data["notes"], $host, $customer);
     }
 }
