@@ -44,15 +44,15 @@ if (isset($_POST["update"])) {
             <form class="add-user-form" method="post" name="upd_user">
                 <div>
                     <label class="add-user-label" for="name">Nom <span style="color:red;">*</span></label>
-                    <input class="add-user-input" type="text" id="name" name="name">
+                    <input class="add-user-input" type="text" id="name" name="name" value="<?php echo $current_name; ?>">
                 </div>
                 <div>
                     <label class="add-user-label" for="code">Code Interne</label>
-                    <input class="add-user-input" type="text" id="" name="code"  value="Généré automatiquement" disabled>
+                    <input class="add-user-input" type="text" id="" name="code"  value="<?php echo $current_code; ?>" disabled>
                 </div>
                 <div>
                     <label class="add-user-label" for="note">Notes / Remarques</label>
-                    <textarea class="add-user-textarea add-user-input" id="note" name="note"></textarea>    
+                    <textarea class="add-user-textarea add-user-input" id="note" name="note"><?php echo $current_notes; ?></textarea>    
                 </div>
                 <div class="btn-form-bottom">
                     <input id="btn-cancel" type="reset" name="annuler" value="Annuler">
