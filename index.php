@@ -109,11 +109,23 @@ try {
                     <select class="add-user-input" type="text" id="id_customer" name="name" onchange="showCode(this.value), showName(this.value), showNotes(this.value)">
                         <option value=""></option>
                         <?php
-        foreach ($fetch_customer as $customer) {
-            echo "<option value='". $customer["id"] ."'>". $customer["name"] ."</option>";
-        }
-?>
+                        $query = ''; 
+                        if($route[0] == 'Heberg')
+                        {
+                            $query = $co->prepare('SELECT * from host');
+                        } elseif ($route[0] == 'Clients'){
+                            $query = $co->prepare('SELECT * from customer');
+                            
+                        }
+                        $query->execute();
+                   
+                        $fetch_customer = $query->fetchAll();
+                        foreach ($fetch_customer as $customer) {
+                        echo "<option value='". $customer["id"] ."'>". $customer["name"] ."</option>";
+                        }
+                        ?>
                     </select>
+                    <?php var_dump($route[0]); ?>
                 </div>
                 <p class="actionModal bn19">Modifier</p>
                 <p class="actionModal bn19">Ajouter</p>
