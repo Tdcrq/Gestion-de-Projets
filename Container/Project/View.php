@@ -1,5 +1,4 @@
 <?php
-var_dump($route);
 if ($route[1] === "Insert") {
     require("Container/Project/Insert.php");
 } elseif ($route[1] === "Update") {
@@ -23,7 +22,7 @@ if ($route[1] === "Insert") {
                 </tr>
                 <?php
                         $query = $co->prepare(
-        'SELECT *
+                        'SELECT *
                         FROM host H, customer C, project P
                         WHERE C.id = P.customer_id
                         AND H.id = P.host_id'
@@ -41,7 +40,7 @@ if ($route[1] === "Insert") {
             </table>
             <div class="btn-form-bottom">
                 <a id="btn-save" type="submit" name="add" onClick="Insert()">+ Ajouter</a>
-                </div>      
+            </div>      
         </div>
     </div>
 </div>

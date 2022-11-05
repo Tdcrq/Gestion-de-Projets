@@ -2,7 +2,6 @@
 require(__DIR__."/vendor/autoload.php");
 
 use App\DB\ConnexionBdd;
-use App\Classes\Customer;
 
 $config = new ConnexionBdd();
 $co = $config->co();
