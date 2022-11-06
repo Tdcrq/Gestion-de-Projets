@@ -1,20 +1,37 @@
 <?php
-// TEST //
-// use App\FormTreatment\Hydrate;
-// try {
-//     $test = Hydrate::hydrateProject([
-//         "name" => "name_project",
-//         "code" => "code_project",
-//         "lastPF" => "lestPF",
-//         "linkM" => "linkM",
-//         "managedServer" => "managedServer",
-//         "notes" => "notes_project",
-//         "id_customer" => "1",
-//         "id_host" => "1"
-//     ]);
-// } catch (Error $e) {
-//     echo "error";
-// }
+
+use App\FormTreatment\Hydrate;
+use App\FormTreatment\Validator;
+use App\FormTreatment\Insert;
+
+$error ="";
+if (isset($_POST["add"])) {
+    $notes = $_POST["notes"];
+    $name = $_POST["name"];
+    $dossierLP = $_POST["dossierLP"];
+    $lienM = $_POST["lienM"];
+    $client = $_POST["client"];
+    $hebergeur = $_POST["hebergeur"];
+    $serveurInfo = 0;
+    $data = [
+        "name" => $name,
+        "lastPF" => $dossierLP,
+        "linkM" => $lienM,
+        "managedServer" => $serveurInfo,
+        "notes" => $notes,
+        "id_host" => $hebergeur,
+        "id_customer" => $client
+    ];
+    $project = Hydrate::hydrateProject($data);
+    $verifProject = Validator::ValidatorProject($project);
+    if ($verifProject["name"] == false) {
+        $error = $verifProject[1];
+    } else {
+        $verifProject["customer"] = $client;
+        $verifProject["host"] = $hebergeur;
+        Insert::InsertProject($verifProject);
+    }
+}
 ?>
 <div>
     <h1 class="title-right-section">Nouveau projets</h1>
@@ -25,6 +42,11 @@
 <div class="right-contents">
     <div>
         <form class="add-user-form" method="post" name="upd_user">
+            <p class="error">
+                <?php
+                echo $error;
+                ?>
+            </p>
             <div class="flexRow">
                 <div>
                     <div>
@@ -54,7 +76,8 @@
                     <?php
                     $query = $co->prepare('SELECT * FROM customer');
                     $query->execute();
-                    while ($row = $query->fetch()) {
+                    while($row = $query->fetch())
+                    {
                         echo "<option value='".$row['0']."'>".$row['2']."</option>";
                     }
                     ?>
@@ -67,7 +90,8 @@
                     <?php
                     $query = $co->prepare('SELECT * FROM host');
                     $query->execute();
-                    while ($row = $query->fetch()) {
+                    while($row = $query->fetch())
+                    {
                         echo "<option value='".$row['0']."'>".$row['2']."</option>";
                     }
                     ?>
@@ -75,15 +99,15 @@
             </div>
             <div>
                 <label class="add-user-label" for="serveurInfo">Serveur Infogéré</label>
-                <input type="checkbox" id="serveurInfo" name="serveurInfo" class="input-checkbox">
+                <input type="checkbox" id="serveurInfo" name="serveurInfo[]" value ="1" class="input-checkbox">
             </div>
             <div>
-                <label class="add-user-label" for="note">Notes / Remarques</label>
-                <textarea class="add-user-textarea add-user-input" id="note" name="note"></textarea>    
+                <label class="add-user-label" for="notes">Notes / Remarques</label>
+                <textarea class="add-user-textarea add-user-input" id="notes" name="notes"></textarea>    
             </div>
             <div class="btn-form-bottom">
-                <input id="btn-cancel" type="reset" name="annuler" value="Annuler">
-                <input id="btn-save" type="submit" name="update" value="Sauvegarder">
+                <input id="btn-cancel" type="submit" name="annuler" value="Annuler">
+                <input id="btn-save" type="submit" name="add" value="Sauvegarder">
             </div>
         </form>
     </div>
