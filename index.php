@@ -18,8 +18,6 @@ $co = $config->co();
         <!-- CSS -->
         <link rel="stylesheet" href="public/css/colors.css">
         <link rel="stylesheet" href="public/css/app.css">
-        <!-- JS -->
-        <script src="public/js/getData/getCode.js"></script>
     </head>
 
     <body>
@@ -96,8 +94,8 @@ $co = $config->co();
                     </select>
                 </div>
                 <div class="btn-con">
-                    <p class="actionModal bn19 disable">Modifier</p>
-                    <p class="supModal bn19 disable">Supprimer</p>
+                    <p class="actionModal bn19">Modifier</p>
+                    <p class="supModal bn19">Supprimer</p>
                     <fieldset>
                         <legend>Etes vous sur ?</legend>
 
@@ -135,8 +133,8 @@ $co = $config->co();
                     </select>
                 </div>
                 <div class="btn-con">
-                    <p class="actionModal bn19 disable">Modifier</p>
-                    <p class="supModal bn19 disable">Supprimer</p>
+                    <p class="actionModal bn19">Modifier</p>
+                    <p class="supModal bn19">Supprimer</p>
                     <fieldset>
                         <legend>Etes vous sur ?</legend>
 
@@ -157,7 +155,7 @@ $co = $config->co();
     </body>
 
     <script src="public/js/modal.js"></script>
-    <script src="public/js/cookie_project.js"></script>
+    <!-- <script src="public/js/cookie_project.js"></script> -->
 
     <footer>
     </footer>
