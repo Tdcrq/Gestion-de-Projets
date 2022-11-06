@@ -29,6 +29,9 @@ if (isset($_POST["update"])) {
         $error = $verifHost[1];
     } else {
         Update::UpdateHost($verifHost, $id_host);
+        setcookie('route','dash');
+        header('Location: ./');
+       
     }
 }
 ?>

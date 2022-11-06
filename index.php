@@ -17,7 +17,7 @@ $co = $config->co();
         <script src="https://kit.fontawesome.com/96626c594d.js" crossorigin="anonymous"></script>
         <!-- CSS -->
         <link rel="stylesheet" href="public/css/colors.css">
-        <link rel="stylesheet" href="public/css/index.css">
+        <link rel="stylesheet" href="public/css/app.css">
         <!-- JS -->
         <script src="public/js/getData/getCode.js"></script>
     </head>
@@ -95,7 +95,24 @@ $co = $config->co();
                         ?>
                     </select>
                 </div>
-                <p class="actionModal bn19">Modifier</p>
+                <div class="btn-con">
+                    <p class="actionModal bn19">Modifier</p>
+                    <p class="supModal bn19">Supprimer</p>
+                    <fieldset>
+                        <legend>Etes vous sur ?</legend>
+
+                        <div>
+                            <input type="radio" id="oui" name="supCli" value="true">
+                            <label for="oui">oui</label>
+                        </div>
+
+                        <div>
+                        <input type="radio" id="non" name="supCli" value="false" checked> 
+                        <label for="non">non</label>
+                        </div>
+
+                    </fieldset>
+                </div>
                 <p class="actionModal bn19">Ajouter</p>
             </div>
         </div>
@@ -117,9 +134,25 @@ $co = $config->co();
                         ?>
                     </select>
                 </div>
-                <p class="actionModal bn19">Modifier</p>
+                <div class="btn-con">
+                    <p class="actionModal bn19">Modifier</p>
+                    <p class="supModal bn19">Supprimer</p>
+                    <fieldset>
+                        <legend>Etes vous sur ?</legend>
+
+                        <div>
+                            <input type="radio" id="oui" name="supHe" value="true">
+                            <label for="oui">oui</label>
+                        </div>
+
+                        <div>
+                        <input type="radio" id="non" name="supHe" value="false" checked> 
+                        <label for="non">non</label>
+                        </div>
+
+                    </fieldset>
+                </div>
                 <p class="actionModal bn19">Ajouter</p>
-            </div>
         </div>
     </body>
 

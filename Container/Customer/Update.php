@@ -29,6 +29,8 @@ if (isset($_POST["update"])) {
         $error = $verifyCustomer[1];
     } else {
         Update::UpdateCustomer($verifyCustomer, $id_customer);
+        setcookie('route','dash');
+        header('Location: ./');
     }
 }
 ?>
