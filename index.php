@@ -95,7 +95,7 @@ $co = $config->co();
                 </div>
                 <div class="btn-con">
                     <p class="actionModal bn19">Modifier</p>
-                    <p class="supModal bn19">Supprimer</p>
+                    <p class="supModal bn19 cli">Supprimer</p>
                     <fieldset>
                         <legend>Etes vous sur ?</legend>
 
@@ -134,7 +134,7 @@ $co = $config->co();
                 </div>
                 <div class="btn-con">
                     <p class="actionModal bn19">Modifier</p>
-                    <p class="supModal bn19">Supprimer</p>
+                    <p class="supModal bn19 he">Supprimer</p>
                     <fieldset>
                         <legend>Etes vous sur ?</legend>
 

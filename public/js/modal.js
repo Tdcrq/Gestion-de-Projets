@@ -15,9 +15,6 @@ let actionModalList = document.querySelectorAll('.actionModal');
 let select = document.getElementById('id_customer');
 let selectH = document.getElementById('id_host');
 
-if (select.value != '') {
-    actionModalList[0].classList.remove('disable');
-}
 
 function modalView(_routes) {
     if(_routes == 'Clients') {
@@ -111,15 +108,14 @@ actionModalList[3].addEventListener('click', () =>{
 }) 
 //DELETE
 
-let supBtnCLi = document.querySelectorAll('.supModal')[0];
-let supBtnHe = document.querySelectorAll('.supModal')[1];
+let supBtnCLi = document.querySelector('.cli');
+let supBtnHe = document.querySelector('.he');
 
 supBtnCLi.addEventListener('click', () => {
     if(select.value === '') {
         return
     }
     if(document.getElementById("ouiCli").checked){
-        console.log('tt');
         cliModal.style.display = "none";
         location.replace("Container/CommonDelete/delete.php/?id=" + select.value + "&route=" + 'cli');
     }
@@ -127,12 +123,11 @@ supBtnCLi.addEventListener('click', () => {
 
 
 supBtnHe.addEventListener('click', () => {
-    if(select.value === '') {
+    if(selectH.value === '') {
         return
     }
     if(document.getElementById("ouiHe").checked){
-        console.log('tt');
         heModal.style.display = "none";
-        location.replace("Container/CommonDelete/delete.php/?id=" + select.value + "&route=" + 'heb');
+        location.replace("Container/CommonDelete/delete.php/?id=" + selectH.value + "&route=" + 'heb');
     }
 })
