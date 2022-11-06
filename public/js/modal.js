@@ -66,6 +66,9 @@ window.onclick = function(event) {
         heModal.style.display = "none";
     }
 }
+
+
+//UPDATE
 actionModalList[0].addEventListener('click', () =>{
     if(select.value === '') {
         return
@@ -75,14 +78,6 @@ actionModalList[0].addEventListener('click', () =>{
     console.log(document.cookie);
     cliModal.style.display = "none";
     location.assign("?id=" + select.value); 
-}) 
-actionModalList[1].addEventListener('click', () =>{
-    // document.getElementsById("update").style.display = hidden;
-    let oldCookie = getCookie("route");
-    document.cookie = "route="+oldCookie+"/add";
-    console.log(document.cookie);
-    cliModal.style.display = "none";
-    window.location.reload();
 }) 
 actionModalList[2].addEventListener('click', () =>{
     if(selectH.value === '') {
@@ -94,11 +89,46 @@ actionModalList[2].addEventListener('click', () =>{
     heModal.style.display = "none";
     location.assign("?id=" + selectH.value); 
 }) 
-actionModalList[3].addEventListener('click', () =>{
-    // document.getElementsById("update").style.display = hidden;
+
+//ADD
+actionModalList[1].addEventListener('click', () =>{
     let oldCookie = getCookie("route");
     document.cookie = "route="+oldCookie+"/add";
     console.log(document.cookie);
     cliModal.style.display = "none";
     window.location.reload();
 }) 
+actionModalList[3].addEventListener('click', () =>{
+    let oldCookie = getCookie("route");
+    document.cookie = "route="+oldCookie+"/add";
+    console.log(document.cookie);
+    cliModal.style.display = "none";
+    window.location.reload();
+}) 
+//DELETE
+
+let supBtnCLi = document.querySelectorAll('.supModal')[0];
+let supBtnHe = document.querySelectorAll('.supModal')[1];
+
+supBtnCLi.addEventListener('click', () => {
+    if(select.value === '') {
+        return
+    }
+    if(document.getElementById("ouiCli").checked){
+        console.log('tt');
+        cliModal.style.display = "none";
+        location.replace("Container/CommonDelete/delete.php/?id=" + select.value + "&route=" + 'cli');
+    }
+})
+
+
+supBtnHe.addEventListener('click', () => {
+    if(select.value === '') {
+        return
+    }
+    if(document.getElementById("ouiHe").checked){
+        console.log('tt');
+        heModal.style.display = "none";
+        location.replace("Container/CommonDelete/delete.php/?id=" + select.value + "&route=" + 'heb');
+    }
+})

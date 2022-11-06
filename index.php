@@ -102,7 +102,7 @@ $co = $config->co();
                         <legend>Etes vous sur ?</legend>
 
                         <div>
-                            <input type="radio" id="oui" name="supCli" value="true">
+                            <input type="radio" id="ouiCli" name="supCli" value="true">
                             <label for="oui">oui</label>
                         </div>
 
@@ -141,7 +141,7 @@ $co = $config->co();
                         <legend>Etes vous sur ?</legend>
 
                         <div>
-                            <input type="radio" id="oui" name="supHe" value="true">
+                            <input type="radio" id="ouiHe" name="supHe" value="true">
                             <label for="oui">oui</label>
                         </div>
 
