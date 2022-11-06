@@ -30,4 +30,16 @@ class Update
             $error = $e;
         }
     }
+
+    public static function UpdateProject(array $data, int $id): void
+    {
+        $config = new ConnexionBdd();
+        $co = $config->co();
+        try {
+            $query = $co->prepare("UPDATE project SET code=?, name=?, notes=?, lastpass_folder=?, link_mock_ups=?, managed_server=?, host_id=?, customer_id=? WHERE id=?");
+            $query->execute([$data["code"], $data["name"], $data["notes"], $data["dossierLP"], $data["lienM"], $data["serveurInfo"], $data["host"], $data["customer"], $id]);
+        } catch(Exception $e) {
+            $error = $e;
+        }
+    }
 }
