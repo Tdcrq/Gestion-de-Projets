@@ -39,7 +39,7 @@ class Validator
             $errorMsg = "Le nom doit contenir 1-255 caractère(s).\n";
         }
 
-        if (strlen($name) > 1000) {
+        if (strlen($notes) > 1000) {
             $isValid = false;
             $errorMsg = $errorMsg + "Notes doit contenir un maximum de 1000 caractère(s).\n";
         }
@@ -53,6 +53,62 @@ class Validator
         } else {
             return array(
                 $isValid,
+                $errorMsg
+            );
+        }
+    }
+    public static function ValidatorProject(Project $ProjectInValidation): array
+    {
+        $isValid = true;
+
+        $serveurInfo = $ProjectInValidation->getManagedServer();
+        $code  = Validator::inputSecurityFunction($ProjectInValidation->getCode());
+        $name  = Validator::inputSecurityFunction($ProjectInValidation->getName());
+        $notes = Validator::inputSecurityFunction($ProjectInValidation->getNotes());
+        $dossierLP = Validator::inputSecurityFunction($ProjectInValidation->getLastPassFolder());
+        $lienM = Validator::inputSecurityFunction($ProjectInValidation -> getLinkMockUps());
+        $customer = Validator::inputVerificationFunction($ProjectInValidation->getCustomer(), null);
+        $host = Validator::inputVerificationFunction(null, $ProjectInValidation->getHost());
+
+        if (strlen($name) == 0 || strlen($name) > 255) {
+            $isValid = false;
+            $errorMsg = "Le nom doit contenir 1-255 caractère(s).\n";
+        }
+
+        if (strlen($notes) > 1000) {
+            $isValid = false;
+            $errorMsg = $errorMsg + "Notes doit contenir un maximum de 1000 caractère(s).\n";
+        }
+
+        if (strlen($dossierLP) > 255) {
+            $isValid = false;
+            $errorMsg = "Le Dossier Lastpass doit contenir 0-255 caractère(s).\n";
+        }
+
+        if (strlen($lienM) > 255) {
+            $isValid = false;
+            $errorMsg = "Le lien maquettes doit contenir 0-255 caractère(s).\n";
+        }
+
+        if (strlen($serveurInfo) >= 2) {
+            $isValid = false;
+            $errorMsg = "sa marche pas au niveau du serveur info \n";
+        }
+
+        if ($isValid == true) {
+            return array(
+                "name" =>$name,
+                "code" =>$code,
+                "dossierLP" =>$dossierLP,
+                "lienM" =>$lienM,
+                "serveurInfo" =>$serveurInfo,
+                "notes" =>$notes,
+                "customer" =>$customer,
+                "host" =>$host
+            );
+        } else {
+            return array(
+                "name"=>$isValid,
                 $errorMsg
             );
         }
