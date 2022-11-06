@@ -31,4 +31,17 @@ class Insert
             $error = $e;
         }
     }
+
+    public static function InsertProject(array $data): void
+    {
+        $config = new ConnexionBdd();
+        $co = $config->co();
+        try {
+            $query = $co->prepare("INSERT INTO Project( name, code, lastpass_folder, link_mock_ups, managed_server, notes, host_id, customer_id ) VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
+            $query->execute([$data["name"],$data["code"],$data["dossierLP"],$data["lienM"],$data["serveurInfo"],$data["notes"],$data["host"],$data["customer"]]);
+        } catch(Exception $e) {
+            $error = $e;
+            echo $error;
+        }
+    }
 }
