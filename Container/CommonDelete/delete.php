@@ -7,15 +7,14 @@ $config = new ConnexionBdd();
 $co = $config->co();
 $id = $_GET["id"];
 $route = $_GET["route"];
-
 $route == "cli" ? $route = "customer" : $route = "host";
+var_dump($route);
+if ($route == "host") {
+    $query = $co->prepare("DELETE FROM host WHERE id = ?");
+} elseif ($route == "customer") {
+    $query = $co->prepare("DELETE FROM customer WHERE id = ?");
+}
+$query->execute([$id]);
 
-
-$query = $co->prepare("SELECT * FROM ? WHERE id = ?");
-$query->bindParam('1', $route, PDO::PARAM_STR);
-$query->bindParam('2', $id, PDO::PARAM_INT);
-var_dump($query);
-$query->execute();
-$theCustomer = $query->fetchAll();
-var_dump($theCustomer);
-
+setcookie('route','dash');
+header('Location: ../../../');
