@@ -15,6 +15,10 @@ let actionModalList = document.querySelectorAll('.actionModal');
 let select = document.getElementById('id_customer');
 let selectH = document.getElementById('id_host');
 
+if (select.value != '') {
+    actionModalList[0].classList.remove('disable');
+}
+
 function modalView(_routes) {
     if(_routes == 'Clients') {
         cliModal.style.display = "block";

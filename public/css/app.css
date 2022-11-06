@@ -257,3 +257,7 @@ text-decoration: none;
 cursor: pointer;
 }
 
+.disable {
+    background-color: grey;
+    background-image: none!important;
+}
