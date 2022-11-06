@@ -37,8 +37,8 @@ class Hydrate
 
         $query_customer = $co->prepare("SELECT * FROM customer WHERE id = ?");
         $query_host = $co->prepare("SELECT * FROM host WHERE id = ?");
-        $query_customer->execute([intval($data["id_customer"])]);
-        $query_host->execute([intval($data["id_host"])]);
+        $query_customer->execute([$data["id_customer"]]);
+        $query_host->execute([$data["id_host"]]);
         $data_customer = $query_customer->fetchAll();
         $data_host = $query_host->fetchAll();
 
@@ -56,9 +56,6 @@ class Hydrate
             ];
             $host = Hydrate::hydrateHost($host);
         }
-        var_dump($customer);
-        echo "<br><br>";
-        var_dump($host);
         $temp = Hydrate::treatmentCodeName($data["name"]);
         return new Project($temp["name"], $temp["code"], $data["lastPF"],$data["linkM"], $data["managedServer"], $data["notes"], $host, $customer);
     }
