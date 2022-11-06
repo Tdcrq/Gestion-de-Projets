@@ -4,6 +4,7 @@ use App\FormTreatment\Hydrate;
 use App\FormTreatment\Validator;
 use App\FormTreatment\Update;
 
+$error = "";
 $id_host = $_GET["id"];
 
 $query = $co->prepare("SELECT * FROM host WHERE id = ?");
@@ -42,6 +43,11 @@ if (isset($_POST["update"])) {
     <div class="right-contents">
         <div>
             <form class="add-user-form" method="post" name="upd_user">
+                <p class="error">
+                    <?php
+                    echo $error;
+                    ?>
+                </p>
                 <div>
                     <label class="add-user-label" for="name">Nom <span style="color:red;">*</span></label>
                     <input class="add-user-input" type="text" id="name" name="name" value="<?php echo $current_name; ?>">
@@ -51,8 +57,8 @@ if (isset($_POST["update"])) {
                     <input class="add-user-input" type="text" id="" name="code"  value="<?php echo $current_code; ?>" disabled>
                 </div>
                 <div>
-                    <label class="add-user-label" for="note">Notes / Remarques</label>
-                    <textarea class="add-user-textarea add-user-input" id="note" name="note"><?php echo $current_notes; ?></textarea>    
+                    <label class="add-user-label" for="notes">Notes / Remarques</label>
+                    <textarea class="add-user-textarea add-user-input" id="notes" name="notes"><?php echo $current_notes; ?></textarea>    
                 </div>
                 <div class="btn-form-bottom">
                     <input id="btn-cancel" type="reset" name="annuler" value="Annuler">
